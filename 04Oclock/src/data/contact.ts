@@ -1,0 +1,33 @@
+export const CONTACT_CONFIG = {
+  email: "contact@04oclock.tech",
+  phone: "+1 (555) 040-2026",
+  secondaryPhone: "+94 71 350 66 55",
+  location: "Global Technology Headquarters",
+  address: "Innovation Tower, Suite 400, Tech Park",
+  businessHours: "Monday – Friday: 09:00 AM – 06:00 PM (UTC)",
+  socials: [
+    { name: "GitHub", url: "https://github.com/udithavithanage" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/uditha-vithanage-06589631b" },
+    { name: "Twitter", url: "https://x.com/uditha_2003" },
+    { name: "Instagram", url: "https://www.instagram.com/uditha_vithanage" },
+  ],
+  servicesOptions: [
+    "Web Development",
+    "Mobile App Development",
+    "Custom Software Development",
+    "SaaS Development",
+    "UI/UX Design",
+    "AI & Machine Learning",
+    "API & Backend Development",
+    "Cloud & DevOps",
+    "Business Automation",
+    "Technology Consulting",
+  ],
+  budgetRanges: [
+    "< $10,000",
+    "$10,000 - $25,000",
+    "$25,000 - $50,000",
+    "$50,000 - $100,000",
+    "$100,000+",
+  ],
+};

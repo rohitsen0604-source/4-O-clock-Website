@@ -1,0 +1,153 @@
+.journey-snake-section {
+  padding: 100px 0;
+  width: 100%;
+  position: relative;
+  background-color: var(--backgroundColor);
+  overflow: hidden;
+}
+
+.journey-snake-container {
+  max-width: var(--cMaxWidth);
+  width: var(--cWidth);
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Desktop Vector Canvas */
+.journey-desktop-canvas {
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.journey-snake-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.journey-circle-badge {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.journey-node-group:hover .journey-circle-badge {
+  transform: scale(1.15);
+  transform-origin: center;
+}
+
+/* Cards Overlay HTML Positioning */
+.journey-cards-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.journey-text-card {
+  position: absolute;
+  width: 190px;
+  pointer-events: auto;
+  transition: transform 0.3s ease;
+}
+
+.journey-align-bottom {
+  transform: translate(-50%, 35px);
+  text-align: center;
+}
+
+.journey-align-top {
+  transform: translate(-50%, -150px);
+  text-align: center;
+}
+
+.journey-align-right-top {
+  transform: translate(-50%, -150px);
+  text-align: center;
+}
+
+.journey-card-step {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.journey-card-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+  line-height: 1.25;
+}
+
+.journey-card-desc {
+  font-size: 11.5px;
+  color: #aaaaaa;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Mobile Stack */
+.journey-mobile-stack {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.journey-mobile-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.journey-mobile-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.journey-mobile-step {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.journey-mobile-content h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  margin: 4px 0;
+}
+
+.journey-mobile-content p {
+  font-size: 13px;
+  color: #999;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 900px) {
+  .journey-desktop-canvas {
+    display: none;
+  }
+  .journey-mobile-stack {
+    display: flex;
+  }
+}

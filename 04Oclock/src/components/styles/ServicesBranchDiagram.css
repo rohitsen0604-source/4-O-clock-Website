@@ -1,0 +1,206 @@
+/* Services Branch Diagram Section */
+.services-branch-section {
+  width: 100%;
+  position: relative;
+  padding: 80px 0;
+  overflow: hidden;
+  user-select: none;
+  background-color: #000000;
+}
+
+.services-branch-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services-branch-layout {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  min-height: 820px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* SVG Connecting Branch Lines Canvas */
+.services-svg-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Central Hub Circle - Full 04.png Logo, No Text */
+.services-center-hub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: #000000;
+  border: 2.5px solid var(--accentColor);
+  box-shadow: 0 0 50px rgba(229, 193, 88, 0.4), inset 0 0 25px rgba(229, 193, 88, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  box-sizing: border-box;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.services-hub-logo {
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Columns for Service Pill Cards */
+.services-column-left,
+.services-column-right {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  z-index: 20;
+  width: 440px;
+}
+
+/* Pill / Capsule Service Card (Clean Display: Icon + Title + Short Desc) */
+.service-pill-card {
+  background-color: rgba(18, 15, 23, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 100px;
+  padding: 16px 28px 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.85);
+  cursor: default;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+  height: 90px;
+  box-sizing: border-box;
+}
+
+.service-pill-card:hover {
+  border-color: var(--accentColor);
+  background-color: rgba(25, 20, 32, 0.98);
+  box-shadow: 0 16px 40px rgba(229, 193, 88, 0.3);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.service-pill-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #120e17;
+  border: 1.5px solid var(--accentColor);
+  color: var(--accentColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease;
+}
+
+.service-pill-card:hover .service-pill-icon {
+  background-color: var(--accentColor);
+  color: #000000;
+  transform: rotate(10deg);
+}
+
+.service-pill-content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.service-pill-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.service-pill-desc {
+  font-size: 12px;
+  color: #a0a0a0;
+  line-height: 1.35;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 1024px) {
+  .services-branch-layout {
+    flex-direction: column;
+    gap: 40px;
+    min-height: auto;
+  }
+  .services-center-hub {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: 12px;
+  }
+  .services-column-left,
+  .services-column-right {
+    width: 100%;
+    max-width: 500px;
+  }
+  .services-svg-canvas {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .services-branch-section {
+    padding: 50px 0;
+  }
+  .services-center-hub {
+    width: 160px;
+    height: 160px;
+  }
+  .service-pill-card {
+    border-radius: 20px;
+    height: auto;
+    min-height: 76px;
+    padding: 14px 16px;
+  }
+  .service-pill-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+  .service-pill-title {
+    font-size: 14px;
+    white-space: normal;
+  }
+  .service-pill-desc {
+    font-size: 11px;
+    white-space: normal;
+  }
+}
+
