@@ -157,24 +157,26 @@ export const ProjectCoverflow: React.FC<ProjectCoverflowProps> = ({ projects }) 
                   </div>
 
                   {/* Card Bottom Action: Visit Project Button */}
-                  {project.projectUrl ? (
-                    <a
-                      href={project.projectUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="coverflow-visit-btn"
-                      onClick={(e: React.MouseEvent) => e.stopPropagation()}
-                    >
-                      Visit Project <MdArrowOutward />
-                    </a>
-                  ) : (
-                    <Link
-                      to={`/works/${project.slug}`}
-                      className="coverflow-visit-btn"
-                      onClick={(e: React.MouseEvent) => e.stopPropagation()}
-                    >
-                      Visit Project <MdArrowOutward />
-                    </Link>
+                  {!project.hideVisitBtn && (
+                    project.projectUrl ? (
+                      <a
+                        href={project.projectUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="coverflow-visit-btn"
+                        onClick={(e: React.MouseEvent) => e.stopPropagation()}
+                      >
+                        Visit Project <MdArrowOutward />
+                      </a>
+                    ) : (
+                      <Link
+                        to={`/works/${project.slug}`}
+                        className="coverflow-visit-btn"
+                        onClick={(e: React.MouseEvent) => e.stopPropagation()}
+                      >
+                        Visit Project <MdArrowOutward />
+                      </Link>
+                    )
                   )}
                 </div>
               </div>
