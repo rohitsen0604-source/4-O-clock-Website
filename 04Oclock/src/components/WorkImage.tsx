@@ -14,11 +14,15 @@ const WorkImage = (props: Props) => {
   const [video, setVideo] = useState("");
   const handleMouseEnter = async () => {
     if (props.video) {
-      setIsVideo(true);
-      const response = await fetch(`src/assets/${props.video}`);
-      const blob = await response.blob();
-      const blobUrl = URL.createObjectURL(blob);
-      setVideo(blobUrl);
+      try {
+        const videoPath = props.video.startsWith("/") || props.video.startsWith("http")
+          ? props.video
+          : `src/assets/${props.video}`;
+        setVideo(videoPath);
+        setIsVideo(true);
+      } catch (err) {
+        setIsVideo(false);
+      }
     }
   };
 

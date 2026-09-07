@@ -11,7 +11,7 @@ interface ClientLogoItem {
 const CLIENT_MATRIX_ROWS: ClientLogoItem[][] = [
   // Row 1 (8 logos)
   [
-    { id: "1", name: "Client Logo 1", logoUrl: "/Logos/100__1_-removebg-preview 1.png" },
+    { id: "1", name: "ECD KART", logoUrl: "/Logos/ecdkart_logo.png" },
     { id: "2", name: "Tour & Hop", logoUrl: "/Logos/2caf55be-47ac-4373-8088-927b3b572f0c_clean.png" },
     { id: "5", name: "KhetiSwags", logoUrl: "/Logos/58d578af-b023-460d-9fce-00bd0241b8e6_clean.png" },
     { id: "6", name: "AccuAi", logoUrl: "/Logos/AccuAi-1-3.png" },

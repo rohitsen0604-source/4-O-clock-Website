@@ -27,21 +27,16 @@ export interface StatBubble {
 
 export const TEAM_MEMBERS: TeamMember[] = [
   {
-    id: "uditha-vithanage",
-    name: "Uditha Vithanage",
-    role: "Founder & Lead Architect",
-    tagline: "Enterprise System Architecture & AI Solutions",
-    bio: "Passionate technology leader and systems architect with over 8 years of experience building high-scale cloud platforms, distributed microservices, and AI integrations. Driven by crafting software that balances performance with elegance.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=80",
+    id: "kanha-meena",
+    name: "Kanha Meena",
+    role: "Founder & Senior Software Developer",
+    tagline: "Full-Stack System Architecture & Scalable Web Platforms",
+    bio: "Passionate technology leader, founder, and senior software developer with extensive experience in building high-scale cloud platforms, distributed microservices, modern web applications, and AI integrations. Driven by crafting software that balances performance with elegance.",
+    image: "/people/KanhaMeena.png",
     colorTheme: "cyan",
     size: "large",
-    skills: ["React", "TypeScript", "Node.js", "AWS", "Python", "Docker", "AI/RAG"],
-    socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-      twitter: "https://x.com",
-      email: "uditha@04oclock.tech",
-    },
+    skills: ["React", "TypeScript", "Node.js", "Python", "Cloud Architecture", "System Design", "Full-Stack Dev"],
+    socials: {},
   },
   {
     id: "sarah-jenkins",
@@ -53,11 +48,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     colorTheme: "magenta",
     size: "large",
     skills: ["Figma", "UI/UX Design", "Design Systems", "Brand Identity", "Design Tokens"],
-    socials: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://x.com",
-      email: "sarah@04oclock.tech",
-    },
+    socials: {},
   },
   {
     id: "alex-rivera",
@@ -69,11 +60,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     colorTheme: "cyan",
     size: "large",
     skills: ["Next.js", "React Native", "GraphQL", "TailwindCSS", "PostgreSQL"],
-    socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-      email: "alex@04oclock.tech",
-    },
+    socials: {},
   },
   {
     id: "elena-rostova",
@@ -85,11 +72,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     colorTheme: "magenta",
     size: "large",
     skills: ["Python", "PyTorch", "LangChain", "Pinecone", "OpenAI API", "FastAPI"],
-    socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-      email: "elena@04oclock.tech",
-    },
+    socials: {},
   },
   {
     id: "marcus-chen",
@@ -101,10 +84,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     colorTheme: "purple",
     size: "medium",
     skills: ["Kubernetes", "Terraform", "AWS", "Docker", "CI/CD", "Cybersecurity"],
-    socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-    },
+    socials: {},
   },
   {
     id: "sophia-martinez",
@@ -116,10 +96,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     colorTheme: "cyan",
     size: "medium",
     skills: ["Figma", "Framer", "Prototyping", "User Research", "Micro-animations"],
-    socials: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://x.com",
-    },
+    socials: {},
   },
   {
     id: "david-kim",
@@ -131,10 +108,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     colorTheme: "purple",
     size: "medium",
     skills: ["Go", "Node.js", "Redis", "Kafka", "Microservices", "MongoDB"],
-    socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-    },
+    socials: {},
   },
   {
     id: "aria-thorne",
@@ -146,10 +120,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     colorTheme: "magenta",
     size: "medium",
     skills: ["Three.js", "WebGL", "GSAP", "GLSL", "Canvas API"],
-    socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-    },
+    socials: {},
   },
   {
     id: "lucas-vance",
@@ -161,9 +132,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     colorTheme: "cyan",
     size: "small",
     skills: ["Playwright", "Cypress", "Jest", "Load Testing", "Security Auditing"],
-    socials: {
-      github: "https://github.com",
-    },
+    socials: {},
   },
   {
     id: "hannah-schmidt",
@@ -175,9 +144,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     colorTheme: "purple",
     size: "small",
     skills: ["Agile/Scrum", "Product Roadmap", "Jira", "Technical Docs"],
-    socials: {
-      linkedin: "https://linkedin.com",
-    },
+    socials: {},
   },
 ];
 

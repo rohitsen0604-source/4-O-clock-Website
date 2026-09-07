@@ -48,7 +48,7 @@ export const MindsBehind: React.FC = () => {
           </div>
 
           <div
-            className="minds-bubble large theme-brand"
+            className="minds-bubble huge theme-brand"
             onClick={() => setSelectedMember(TEAM_MEMBERS[0])}
             title={`${TEAM_MEMBERS[0].name} — ${TEAM_MEMBERS[0].role}`}
           >
@@ -352,50 +352,52 @@ export const MindsBehind: React.FC = () => {
                 ))}
               </div>
 
-              <div className="minds-modal-socials">
-                {selectedMember.socials.github && (
-                  <a
-                    href={selectedMember.socials.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="minds-social-link"
-                    title="GitHub Profile"
-                  >
-                    <FaGithub />
-                  </a>
-                )}
-                {selectedMember.socials.linkedin && (
-                  <a
-                    href={selectedMember.socials.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="minds-social-link"
-                    title="LinkedIn Profile"
-                  >
-                    <FaLinkedinIn />
-                  </a>
-                )}
-                {selectedMember.socials.twitter && (
-                  <a
-                    href={selectedMember.socials.twitter}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="minds-social-link"
-                    title="Twitter Profile"
-                  >
-                    <FaTwitter />
-                  </a>
-                )}
-                {selectedMember.socials.email && (
-                  <a
-                    href={`mailto:${selectedMember.socials.email}`}
-                    className="minds-social-link"
-                    title="Direct Email"
-                  >
-                    <MdEmail />
-                  </a>
-                )}
-              </div>
+              {selectedMember.socials && Object.values(selectedMember.socials).some(Boolean) && (
+                <div className="minds-modal-socials">
+                  {selectedMember.socials.github && (
+                    <a
+                      href={selectedMember.socials.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="minds-social-link"
+                      title="GitHub Profile"
+                    >
+                      <FaGithub />
+                    </a>
+                  )}
+                  {selectedMember.socials.linkedin && (
+                    <a
+                      href={selectedMember.socials.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="minds-social-link"
+                      title="LinkedIn Profile"
+                    >
+                      <FaLinkedinIn />
+                    </a>
+                  )}
+                  {selectedMember.socials.twitter && (
+                    <a
+                      href={selectedMember.socials.twitter}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="minds-social-link"
+                      title="Twitter Profile"
+                    >
+                      <FaTwitter />
+                    </a>
+                  )}
+                  {selectedMember.socials.email && (
+                    <a
+                      href={`mailto:${selectedMember.socials.email}`}
+                      className="minds-social-link"
+                      title="Direct Email"
+                    >
+                      <MdEmail />
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>

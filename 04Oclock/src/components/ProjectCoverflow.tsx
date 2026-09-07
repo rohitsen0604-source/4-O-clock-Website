@@ -120,14 +120,14 @@ export const ProjectCoverflow: React.FC<ProjectCoverflowProps> = ({ projects }) 
             // Dynamic 3D Arc Spatial Transformations
             const stepX = windowWidth < 480 ? 110 : windowWidth < 768 ? 140 : windowWidth < 1024 ? 180 : 225;
             const translateX = offset * stepX;
-            const rotateY = offset * -24;
-            const translateZ = isActive ? 110 : 20 - absOffset * 70;
-            const scale = isActive ? 1.05 : Math.max(0.6, 0.86 - (absOffset - 1) * 0.12);
-            const opacity = isVisible ? (isActive ? 1 : Math.max(0.2, 0.8 - (absOffset - 1) * 0.25)) : 0;
+            const rotateY = offset * -20;
+            const translateZ = isActive ? 80 : 0 - absOffset * 60;
+            const scale = isActive ? 1 : Math.max(0.65, 0.88 - (absOffset - 1) * 0.12);
+            const opacity = isVisible ? (isActive ? 1 : Math.max(0.25, 0.8 - (absOffset - 1) * 0.25)) : 0;
             const zIndex = 100 - absOffset;
             const filter = isActive
               ? "none"
-              : `brightness(${Math.max(0.35, 0.75 - (absOffset - 1) * 0.2)}) blur(${absOffset >= 2 ? "1px" : "0px"})`;
+              : `brightness(${Math.max(0.4, 0.8 - (absOffset - 1) * 0.2)})`;
 
             return (
               <div
