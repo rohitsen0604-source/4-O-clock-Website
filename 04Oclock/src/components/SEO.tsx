@@ -47,7 +47,7 @@ export const SEO: React.FC<SEOProps> = ({ title, description, canonical }) => {
       "@type": "Organization",
       name: "04 O'CLOCK TECHNOLOGIES",
       url: window.location.origin,
-      logo: `${window.location.origin}/images/logo.png`,
+      logo: `${window.location.origin}/images/circlelogo.png`,
       description: "04 O'Clock Technologies builds modern digital products, scalable software and intelligent technology solutions.",
       address: {
         "@type": "PostalAddress",

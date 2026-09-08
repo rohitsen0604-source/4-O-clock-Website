@@ -59,7 +59,7 @@ const Landing = ({ children }: PropsWithChildren) => {
               <div className="hero-stat-number">
                 5<span>+</span>
               </div>
-              <div className="hero-stat-label">YO Industry Experience</div>
+              <div className="hero-stat-label">Yrs Industry Experience</div>
             </div>
 
             <div className="hero-stat-item">

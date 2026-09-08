@@ -1,0 +1,114 @@
+/* Global Reach World Map Section - Matte Black & White Theme */
+
+.global-reach-section {
+  width: 100%;
+  padding: 50px 0 60px 0;
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+.global-reach-container {
+  max-width: var(--cMaxWidth);
+  width: var(--cWidth);
+  margin: 0 auto;
+}
+
+/* Plain Matte Black Map Canvas Container */
+.global-map-wrapper-matte {
+  position: relative;
+  width: 100%;
+  border-radius: 0px;
+  background: #000000;
+  overflow: hidden;
+}
+
+.global-map-svg {
+  width: 100%;
+  height: auto;
+  min-height: 480px;
+  max-height: 680px;
+  display: block;
+}
+
+/* Floating Tooltip in Matte Black & White */
+.global-map-tooltip-matte {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
+  min-width: 220px;
+  z-index: 10;
+  animation: tooltipFadeMatte 0.25s ease-out;
+}
+
+@keyframes tooltipFadeMatte {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tooltip-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.tooltip-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.tooltip-region {
+  font-size: 11px;
+  color: #aaaaaa;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tooltip-body {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 8px;
+  margin-top: 4px;
+}
+
+.tooltip-status {
+  font-size: 11px;
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.tooltip-desc {
+  font-size: 12px;
+  color: #aaaaaa;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media screen and (max-width: 768px) {
+  .global-map-tooltip-matte {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    margin-top: 12px;
+  }
+}

@@ -4,6 +4,7 @@ import { Link } from "../router";
 import { PROJECTS_DATA } from "../data/projects";
 import { ProjectCoverflow } from "../components/ProjectCoverflow";
 import { VideoModal } from "../components/VideoModal";
+import { GlobalReachMap } from "../components/GlobalReachMap";
 import { MdArrowOutward } from "react-icons/md";
 import "../components/styles/Pages.css";
 
@@ -95,6 +96,9 @@ export const WorksPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Global Reach World Map Section */}
+      <GlobalReachMap />
+
       {/* Video Modal Component */}
       <VideoModal
         isOpen={activeVideoModal.isOpen}
@@ -107,6 +111,9 @@ export const WorksPage: React.FC = () => {
       {/* CTA */}
       <div style={{ maxWidth: "var(--cMaxWidth)", width: "var(--cWidth)", margin: "0 auto" }}>
         <div className="cta-banner">
+          <span className="section-tag" style={{ marginBottom: "10px", display: "inline-block" }}>
+            LET'S BUILD TOGETHER
+          </span>
           <h3>Want to See a Similar Product Built for Your Brand?</h3>
           <p>
             Share your project concept with us. We'll analyze technical feasibility and provide a detailed blueprint.

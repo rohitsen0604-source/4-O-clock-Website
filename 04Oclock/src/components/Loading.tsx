@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import Marquee from "react-fast-marquee";
 
-import Logo from "../../public/images/logo.png";
+import Logo from "/images/circlelogo.png";
 
 import "./styles/Loading.css";
 

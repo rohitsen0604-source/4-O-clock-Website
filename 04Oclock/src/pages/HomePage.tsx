@@ -7,6 +7,7 @@ import { PROJECTS_DATA } from "../data/projects";
 import { COMPANY_INFO } from "../data/company";
 import { ProjectCoverflow } from "../components/ProjectCoverflow";
 import { IndustryWheelOrbit } from "../components/IndustryWheelOrbit";
+import { GlobalReachMap } from "../components/GlobalReachMap";
 import { MdArrowOutward } from "react-icons/md";
 import "../components/styles/Pages.css";
 
@@ -48,27 +49,29 @@ export const HomePage: React.FC = () => {
       {/* Hero Section */}
       <Landing />
 
-      {/* Enterprise Technology Split Section */}
-      <section className="section-container" style={{ padding: "100px 0" }}>
+      {/* Enterprise Technology & Global Reach Section */}
+      <section className="section-container" style={{ padding: "80px 0 40px 0" }}>
         <div style={{ maxWidth: "var(--cMaxWidth)", width: "var(--cWidth)", margin: "0 auto" }}>
+          {/* Header Row */}
           <div
             style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-              gap: "56px",
-              alignItems: "center",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "flex-end",
+              gap: "32px",
+              marginBottom: "36px",
+              flexWrap: "wrap",
             }}
           >
-            {/* Left Content Block */}
-            <div>
+            <div style={{ maxWidth: "720px" }}>
               <span className="section-tag">ENTERPRISE TECHNOLOGY</span>
               <h2
                 style={{
-                  fontSize: "clamp(32px, 4.5vw, 56px)",
+                  fontSize: "clamp(32px, 4.5vw, 54px)",
                   fontWeight: 900,
                   color: "#ffffff",
                   lineHeight: 1.1,
-                  margin: "12px 0 20px 0",
+                  margin: "12px 0 16px 0",
                   letterSpacing: "-1px",
                 }}
               >
@@ -79,152 +82,22 @@ export const HomePage: React.FC = () => {
                   fontSize: "16px",
                   color: "#aaaaaa",
                   lineHeight: 1.7,
-                  marginBottom: "32px",
-                  maxWidth: "540px",
+                  margin: 0,
                 }}
               >
-                We are an enterprise technology partner dedicated to crafting high-performance digital systems, custom web & mobile software, cloud infrastructure, and AI solutions. Our engineering-driven approach focuses on speed, security, elegance, and long-term scalability.
+                We are an enterprise technology partner dedicated to crafting high-performance digital systems, custom web & mobile software, cloud infrastructure, and AI solutions. Engineered in India, serving enterprise client partners worldwide.
               </p>
+            </div>
+            <div>
               <Link to="/services" className="btn-primary">
                 Explore Our Capabilities <MdArrowOutward />
               </Link>
             </div>
+          </div>
 
-            {/* Right Side: 3 Cards Offset Grid */}
-            <div
-              className="responsive-grid-2"
-              style={{
-                gap: "20px",
-                alignItems: "center",
-              }}
-            >
-              {/* Left Stack of 2 Cards */}
-              <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-                {/* Card 1: High-Scale Architecture */}
-                <div
-                  className="elegant-card"
-                  style={{
-                    padding: "0",
-                    overflow: "hidden",
-                    borderRadius: "20px",
-                    height: "250px",
-                    position: "relative",
-                  }}
-                >
-                  <img
-                    src="/Projects/82c0298f-6b2f-49ba-92ac-cbe8b8afbf82.png"
-                    alt="High-Scale Architecture"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      filter: "brightness(0.7) contrast(1.1)",
-                    }}
-                  />
-                  <div
-                    style={{
-                      position: "absolute",
-                      bottom: "0",
-                      left: "0",
-                      width: "100%",
-                      padding: "20px",
-                      background: "linear-gradient(180deg, transparent 0%, rgba(11,8,12,0.95) 100%)",
-                      boxSizing: "border-box",
-                    }}
-                  >
-                    <h3 style={{ fontSize: "18px", color: "#fff", fontWeight: 800, margin: "0 0 4px 0" }}>
-                      High-Scale Architecture
-                    </h3>
-                    <span style={{ fontSize: "12px", color: "var(--accentColor)", fontWeight: 700 }}>
-                      Enterprise Microservices
-                    </span>
-                  </div>
-                </div>
-
-                {/* Card 2: AI & Intelligence */}
-                <div
-                  className="elegant-card"
-                  style={{
-                    padding: "0",
-                    overflow: "hidden",
-                    borderRadius: "20px",
-                    height: "220px",
-                    position: "relative",
-                  }}
-                >
-                  <img
-                    src="/Projects/ChatGPT Image 18 मार्च 2026, 12_01_37 am (2).png"
-                    alt="AI & Intelligence"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      filter: "brightness(0.7) contrast(1.1)",
-                    }}
-                  />
-                  <div
-                    style={{
-                      position: "absolute",
-                      bottom: "0",
-                      left: "0",
-                      width: "100%",
-                      padding: "20px",
-                      background: "linear-gradient(180deg, transparent 0%, rgba(11,8,12,0.95) 100%)",
-                      boxSizing: "border-box",
-                    }}
-                  >
-                    <h3 style={{ fontSize: "18px", color: "#fff", fontWeight: 800, margin: "0 0 4px 0" }}>
-                      AI & Intelligence
-                    </h3>
-                    <span style={{ fontSize: "12px", color: "var(--accentColor)", fontWeight: 700 }}>
-                      LLMs & Vector RAG Pipelines
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Stacked Tall Card (Card 3) */}
-              <div
-                className="elegant-card"
-                style={{
-                  padding: "0",
-                  overflow: "hidden",
-                  borderRadius: "20px",
-                  minHeight: "250px",
-                  height: "100%",
-                  position: "relative",
-                }}
-              >
-                <img
-                  src="/Projects/ChatGPT Image 18 मार्च 2026, 12_21_10 am.png"
-                  alt="Human-Centered Design"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    filter: "brightness(0.7) contrast(1.1)",
-                  }}
-                />
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: "0",
-                    left: "0",
-                    width: "100%",
-                    padding: "24px",
-                    background: "linear-gradient(180deg, transparent 0%, rgba(11,8,12,0.98) 100%)",
-                    boxSizing: "border-box",
-                  }}
-                >
-                  <h3 style={{ fontSize: "20px", color: "#fff", fontWeight: 800, margin: "0 0 4px 0" }}>
-                    Human-Centered Design
-                  </h3>
-                  <span style={{ fontSize: "12px", color: "var(--accentColor)", fontWeight: 700 }}>
-                    Dark-Mode UI/UX & WebGL
-                  </span>
-                </div>
-              </div>
-            </div>
+          {/* Full-Width Large Global Reach World Vector Map */}
+          <div style={{ width: "100%", overflow: "hidden" }}>
+            <GlobalReachMap hideHeader={true} />
           </div>
         </div>
       </section>
@@ -264,11 +137,7 @@ export const HomePage: React.FC = () => {
       <section className="section-container" style={{ padding: "80px 0 40px 0" }}>
         <div style={{ maxWidth: "var(--cMaxWidth)", width: "var(--cWidth)", margin: "0 auto" }}>
           <div className="section-head">
-            <span className="section-tag">3D Interactive Showcase</span>
-            <h2 className="section-title">Selected Work</h2>
-            <p className="section-desc">
-              Scroll or use the arrows to explore our featured digital product case studies.
-            </p>
+            <h2 className="section-title">Our Best Works</h2>
           </div>
 
           {/* Interactive 3D Curved Coverflow Carousel */}

@@ -267,20 +267,23 @@
   .hero-bottom-bar {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
   .hero-actions-wrapper {
     align-items: center;
     width: 100%;
   }
   .hero-stats-group {
-    width: 100%;
-    max-width: 480px;
+    width: calc(100% - 32px);
+    max-width: 520px;
     justify-content: space-around;
-    padding: 12px 16px;
-    gap: 12px;
+    padding: 14px 20px;
+    gap: 16px;
+    box-sizing: border-box;
   }
   .hero-stat-label {
-    font-size: 9px;
+    font-size: 9.5px;
+    white-space: normal;
   }
   .hero-character-wrapper {
     width: 90vw;
@@ -296,16 +299,25 @@
   .hero-stats-group {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 14px 10px;
     border-radius: 20px;
-    padding: 12px;
+    padding: 14px 12px;
+    width: calc(100% - 24px);
+    max-width: 380px;
+    box-sizing: border-box;
+  }
+  .hero-stat-item {
+    padding: 2px 4px;
   }
   .hero-stat-number {
-    font-size: 20px;
+    font-size: 22px;
   }
   .hero-stat-label {
-    font-size: 8.5px;
+    font-size: 9px;
+    line-height: 1.3;
     letter-spacing: 0.4px;
+    white-space: normal;
+    word-break: break-word;
   }
   .hero-split-title {
     font-size: clamp(18px, 6vw, 28px);

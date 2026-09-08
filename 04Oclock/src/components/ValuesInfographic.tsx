@@ -40,9 +40,9 @@ export const ValuesInfographic: React.FC = () => {
   const startX = 60;
   const stepX = 180;
   const svgWidth = startX + itemsCount * stepX; // 60 + 1260 = 1320
-  const svgHeight = 440;
-  const yMid = 200;
-  const archHeight = 95;
+  const svgHeight = 350;
+  const yMid = 135;
+  const archHeight = 70;
   const archRadiusX = stepX / 2; // 90
 
   // Build the complete continuous wave path for the auto-playing laser glow line
@@ -61,7 +61,7 @@ export const ValuesInfographic: React.FC = () => {
 
   return (
     <section className="values-infographic-section">
-      <div className="section-head" style={{ marginBottom: "40px", textAlign: "center" }}>
+      <div className="section-head" style={{ marginBottom: "16px", textAlign: "center" }}>
         <span className="section-tag">CORE PRINCIPLES</span>
         <h2 className="section-title">Our Values</h2>
         <p className="section-desc">
@@ -128,7 +128,7 @@ export const ValuesInfographic: React.FC = () => {
               const archD = `M ${leftX} ${yMid} A ${archRadiusX} ${archHeight} 0 0 ${sweep} ${rightX} ${yMid}`;
 
               // Dashed vertical drop lines & terminal dots (matching Screenshot 1)
-              const dropY = isTopArch ? yMid + 70 : yMid - 70;
+              const dropY = isTopArch ? yMid + 55 : yMid - 55;
               const isActive = activeIndex === i;
 
               return (

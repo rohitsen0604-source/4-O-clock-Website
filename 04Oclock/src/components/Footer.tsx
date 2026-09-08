@@ -49,7 +49,6 @@ const Footer = () => {
               <h4 className="footer-col-title">Contact</h4>
               <div className="footer-contact-info">
                 <p>Email: <a href={`mailto:${CONTACT_CONFIG.email}`}>{CONTACT_CONFIG.email}</a></p>
-                <p>Phone: <a href={`tel:${CONTACT_CONFIG.phone}`}>{CONTACT_CONFIG.phone}</a></p>
                 <p>Location: {CONTACT_CONFIG.location}</p>
                 <Link to="/contact" className="footer-cta-link">
                   Let's Talk <MdArrowOutward />
