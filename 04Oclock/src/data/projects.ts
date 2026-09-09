@@ -1152,8 +1152,8 @@ export const PROJECTS_DATA: ProjectItem[] = [
       "Travel Booking Engine",
       "Cloud Infrastructure",
     ],
-    image: "/Projects/deshghumo.jpg",
-    videoPoster: "/Projects/deshghumo.jpg",
+    image: "/Projects/deshghumo.png?v=2",
+    videoPoster: "/Projects/deshghumo.png?v=2",
     projectUrl: "https://www.deshghumo.com/",
     challenge:
       "Travelers faced fragmented booking options, opaque package pricing, and complex trip customization processes across various international and domestic destinations.",
