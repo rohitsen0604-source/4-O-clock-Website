@@ -256,7 +256,7 @@
     padding: 0 4px;
   }
   .hero-split-title {
-    font-size: clamp(24px, 7vw, 42px);
+    font-size: clamp(28px, 7.5vw, 52px);
   }
   .hero-hand-scroll-btn {
     bottom: -4%;
@@ -291,7 +291,8 @@
     top: 46%;
   }
   .hero-watermark-text {
-    font-size: clamp(36px, 12vw, 120px);
+    font-size: clamp(46px, 14.5vw, 130px);
+    letter-spacing: -1.5px;
   }
 }
 
@@ -320,12 +321,20 @@
     word-break: break-word;
   }
   .hero-split-title {
-    font-size: clamp(18px, 6vw, 28px);
+    font-size: clamp(24px, 7.5vw, 36px);
+    letter-spacing: -0.5px;
+  }
+  .hero-watermark-text {
+    font-size: clamp(42px, 15vw, 75px);
+    letter-spacing: -1px;
+    width: 100vw;
+    -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.4);
   }
   .hero-content-overlay {
     padding-top: 100px;
     padding-bottom: 16px;
   }
 }
+
 
 

@@ -120,7 +120,7 @@
   width: 68px;
   height: 68px;
   border-radius: 50%;
-  background: rgba(14, 11, 18, 0.92);
+  background: #000000;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 2px solid var(--theme-color);

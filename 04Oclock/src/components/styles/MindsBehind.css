@@ -41,6 +41,11 @@
   letter-spacing: -1px;
 }
 
+.gold-highlight {
+  color: var(--accentColor, #E5C158);
+  text-shadow: 0 0 16px rgba(229, 193, 88, 0.4);
+}
+
 .minds-quote-author {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.5);
@@ -80,7 +85,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 20px 24px;
+  gap: 40px 28px;
   max-width: 1080px;
   margin: 0 auto;
   padding: 10px 0 30px;
@@ -112,19 +117,19 @@
 
 /* Staggered Vertical Offsets for Organic Cloud Effect */
 .minds-bubble.offset-up {
-  transform: translateY(-14px);
+  transform: translateY(-8px);
 }
 
 .minds-bubble.offset-down {
-  transform: translateY(14px);
+  transform: translateY(8px);
 }
 
 .minds-bubble.offset-up:hover {
-  transform: scale(1.14) translateY(-20px);
+  transform: scale(1.14) translateY(-14px);
 }
 
 .minds-bubble.offset-down:hover {
-  transform: scale(1.14) translateY(8px);
+  transform: scale(1.14) translateY(2px);
 }
 
 /* Bubble Sizes */

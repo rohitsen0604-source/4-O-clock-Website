@@ -25,6 +25,8 @@ const Landing = ({ children }: PropsWithChildren) => {
           src="/images/rbtttt.png"
           alt="04 O'Clock Technologies Hero Character"
           className="hero-character-img"
+          loading="eager"
+          decoding="async"
         />
 
         {/* Scroll Down Button Positioned Directly Under Robot's Hand */}

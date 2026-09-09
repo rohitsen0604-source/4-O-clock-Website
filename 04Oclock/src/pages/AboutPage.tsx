@@ -4,7 +4,6 @@ import { Link } from "../router";
 import { ValuesInfographic } from "../components/ValuesInfographic";
 import { WorkProcessDiagram } from "../components/WorkProcessDiagram";
 import { WhyChooseUsDiagram } from "../components/WhyChooseUsDiagram";
-import { JourneySnakeDiagram } from "../components/JourneySnakeDiagram";
 import { MindsBehind } from "../components/MindsBehind";
 import {
   MdArrowOutward,
@@ -232,9 +231,6 @@ export const AboutPage: React.FC = () => {
 
       {/* Minds Behind 04 O'Clock — Interactive Packed Bubble Cloud */}
       <MindsBehind />
-
-      {/* Our Journey Snake Winding Roadmap */}
-      <JourneySnakeDiagram />
 
       {/* Core Values Infographic */}
       <ValuesInfographic />

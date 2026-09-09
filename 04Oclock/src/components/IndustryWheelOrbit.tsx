@@ -193,9 +193,6 @@ export const IndustryWheelOrbit: React.FC = () => {
       <div className="wheel-section-head">
         <span className="section-tag">DOMAIN EXPERTISE</span>
         <h2 className="section-title">Industries We Serve</h2>
-        <p className="section-desc">
-          Scroll or click any industry to explore tailored software solutions.
-        </p>
       </div>
 
       <div className="wheel-container">

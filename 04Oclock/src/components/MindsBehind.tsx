@@ -26,36 +26,22 @@ export const MindsBehind: React.FC = () => {
               MINDS BEHIND 04 O'CLOCK
             </span>
             <h2 className="minds-quote-title">
-              "TAKING PLEASURE IN YOUR WORK LEADS TO PERFECTION."
+              "TAKING PLEASURE IN YOUR WORK LEADS TO <span className="gold-highlight">PERFECTION.</span>"
             </h2>
             <p className="minds-quote-author">— Aristotle</p>
-          </div>
-
-          <div className="minds-meta-badge">
-            <span className="minds-badge-count">25 PEOPLE INTEGRATED</span>
-            <span className="minds-badge-sub">WANT TO JOIN US?</span>
           </div>
         </div>
 
         {/* Spaced Organic Bubble Cloud (White Text Bubbles + Black & White Theme) */}
         <div className="minds-cloud-wrapper">
-          {/* 1. Created in 2023 */}
-          <div className="minds-bubble medium theme-white offset-up">
-            <div className="minds-stat-content">
-              <div className="minds-stat-lbl" style={{ fontSize: "10px" }}>Created in</div>
-              <div className="minds-stat-val" style={{ fontSize: "22px" }}>2023</div>
-            </div>
-          </div>
-
-          {/* Render all 13 Team Members + Stat Interspersing */}
+          {/* Render all 13 Team Members with Stat Bubbles Interspersed Between Photos */}
           {TEAM_MEMBERS.map((member, idx) => {
-            const isOffsetUp = idx % 2 === 1;
-            const isOffsetDown = idx % 3 === 2;
+            const isOffsetUp = idx % 2 === 0;
 
             return (
               <React.Fragment key={member.id}>
                 <div
-                  className={`minds-bubble huge theme-brand ${isOffsetUp ? "offset-up" : isOffsetDown ? "offset-down" : ""}`}
+                  className={`minds-bubble huge theme-brand ${isOffsetUp ? "offset-up" : "offset-down"}`}
                   onClick={() => setSelectedMember(member)}
                   title={`${member.name} — ${member.role}`}
                 >
@@ -63,6 +49,8 @@ export const MindsBehind: React.FC = () => {
                     src={member.image}
                     alt={member.name}
                     className={`minds-bubble-img ${member.id === "rohit-sen" ? "fit-contain" : ""}`}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="minds-bubble-tint" />
                   <div className="minds-bubble-overlay-content">
@@ -70,17 +58,35 @@ export const MindsBehind: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Interspersed Stat Bubbles for aesthetic layout balance */}
-                {idx === 1 && (
+                {/* Interspersed Stat Bubbles evenly between photo bubbles */}
+                {idx === 0 && (
                   <div className="minds-bubble medium theme-white offset-down">
+                    <div className="minds-stat-content">
+                      <div className="minds-stat-lbl" style={{ fontSize: "10px" }}>Created in</div>
+                      <div className="minds-stat-val" style={{ fontSize: "22px" }}>2023</div>
+                    </div>
+                  </div>
+                )}
+
+                {idx === 1 && (
+                  <div className="minds-bubble medium theme-white offset-up">
                     <div className="minds-stat-content">
                       <div className="minds-role-lbl" style={{ fontSize: "11px" }}>Visionary Minds</div>
                     </div>
                   </div>
                 )}
 
+                {idx === 2 && (
+                  <div className="minds-bubble medium theme-white offset-down">
+                    <div className="minds-stat-content">
+                      <div className="minds-stat-val" style={{ fontSize: "20px" }}>99.9%</div>
+                      <div className="minds-stat-lbl" style={{ fontSize: "9px" }}>Uptime SLA</div>
+                    </div>
+                  </div>
+                )}
+
                 {idx === 3 && (
-                  <div className="minds-bubble medium theme-white">
+                  <div className="minds-bubble medium theme-white offset-up">
                     <div className="minds-stat-content">
                       <div className="minds-stat-val" style={{ fontSize: "20px" }}>5+ Yo</div>
                       <div className="minds-stat-lbl" style={{ fontSize: "9px" }}>Experiences</div>
@@ -88,44 +94,74 @@ export const MindsBehind: React.FC = () => {
                   </div>
                 )}
 
-                {idx === 6 && (
-                  <div className="minds-bubble small theme-white offset-up">
+                {idx === 4 && (
+                  <div className="minds-bubble small theme-white offset-down">
                     <div className="minds-role-lbl">DEVELOPERS</div>
                   </div>
                 )}
 
-                {idx === 9 && (
-                  <div className="minds-bubble medium theme-white">
+                {idx === 5 && (
+                  <div className="minds-bubble medium theme-white offset-up">
+                    <div className="minds-stat-content">
+                      <div className="minds-role-lbl" style={{ fontSize: "11px" }}>AI & Cloud Solutions</div>
+                    </div>
+                  </div>
+                )}
+
+                {idx === 6 && (
+                  <div className="minds-bubble medium theme-white offset-down">
                     <div className="minds-stat-content" style={{ fontSize: "11px", fontWeight: 800, color: "#000000" }}>
                       04 O'CLOCK<br /><span style={{ color: "#000000" }}>TECH</span>
+                    </div>
+                  </div>
+                )}
+
+                {idx === 7 && (
+                  <div className="minds-bubble medium theme-white offset-up">
+                    <div className="minds-stat-content">
+                      <div className="minds-stat-val" style={{ fontSize: "20px" }}>75+</div>
+                      <div className="minds-stat-lbl" style={{ fontSize: "9px" }}>Project Delivery</div>
+                    </div>
+                  </div>
+                )}
+
+                {idx === 8 && (
+                  <div className="minds-bubble medium theme-white offset-down">
+                    <div className="minds-stat-content">
+                      <div className="minds-stat-val" style={{ fontSize: "20px" }}>100%</div>
+                      <div className="minds-stat-lbl" style={{ fontSize: "9px" }}>Code Quality</div>
+                    </div>
+                  </div>
+                )}
+
+                {idx === 9 && (
+                  <div className="minds-bubble medium theme-white offset-up">
+                    <div className="minds-stat-content">
+                      <div className="minds-stat-val" style={{ fontSize: "18px" }}>24*7</div>
+                      <div className="minds-stat-lbl" style={{ fontSize: "9px" }}>Support</div>
+                    </div>
+                  </div>
+                )}
+
+                {idx === 10 && (
+                  <div className="minds-bubble medium theme-white offset-down">
+                    <div className="minds-stat-content">
+                      <div className="minds-role-lbl" style={{ fontSize: "11px" }}>Global Reach</div>
+                    </div>
+                  </div>
+                )}
+
+                {idx === 11 && (
+                  <div className="minds-bubble medium theme-white offset-up">
+                    <div className="minds-stat-content">
+                      <div className="minds-stat-val" style={{ fontSize: "20px" }}>60+</div>
+                      <div className="minds-stat-lbl" style={{ fontSize: "9px" }}>Global Clients</div>
                     </div>
                   </div>
                 )}
               </React.Fragment>
             );
           })}
-
-          {/* Row Stat Group */}
-          <div className="minds-bubble medium theme-white offset-up">
-            <div className="minds-stat-content">
-              <div className="minds-stat-val" style={{ fontSize: "20px" }}>75+</div>
-              <div className="minds-stat-lbl" style={{ fontSize: "9px" }}>Project Delivery</div>
-            </div>
-          </div>
-
-          <div className="minds-bubble medium theme-white offset-down">
-            <div className="minds-stat-content">
-              <div className="minds-stat-val" style={{ fontSize: "18px" }}>24*7</div>
-              <div className="minds-stat-lbl" style={{ fontSize: "9px" }}>Support</div>
-            </div>
-          </div>
-
-          <div className="minds-bubble medium theme-white">
-            <div className="minds-stat-content">
-              <div className="minds-stat-val" style={{ fontSize: "20px" }}>60+</div>
-              <div className="minds-stat-lbl" style={{ fontSize: "9px" }}>Global Clients</div>
-            </div>
-          </div>
         </div>
       </div>
 

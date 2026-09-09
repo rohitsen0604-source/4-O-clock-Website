@@ -52,6 +52,7 @@ const Navbar = () => {
                 width: "auto",
                 objectFit: "contain",
                 display: "block",
+                mixBlendMode: "screen",
               }}
             />
           </Link>
