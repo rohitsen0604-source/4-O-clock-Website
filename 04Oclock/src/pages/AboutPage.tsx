@@ -238,7 +238,7 @@ export const AboutPage: React.FC = () => {
       {/* How We Work Process Diagram */}
       <WorkProcessDiagram />
 
-      {/* Why Choose Us Infographic Diagram */}
+      {/* Why Choose Us Infographic Section (3D Question Mark Layout) */}
       <WhyChooseUsDiagram />
 
       {/* CTA */}
