@@ -1,11 +1,12 @@
-/* Global Reach World Map Section - Matte Black & White Theme */
+/* Global Reach Section - Matte Black 2-Column Side-by-Side Theme */
 
 .global-reach-section {
   width: 100%;
-  padding: 50px 0 60px 0;
+  padding: 80px 0;
   background: #000000;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .global-reach-container {
@@ -14,136 +15,106 @@
   margin: 0 auto;
 }
 
-/* Plain Matte Black Map Canvas Container */
-.global-map-wrapper-matte {
-  position: relative;
-  width: 100%;
-  border-radius: 0px;
-  background: #000000;
-  overflow: hidden;
+.global-reach-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
 }
 
-.global-map-svg {
-  width: 100%;
-  height: auto;
-  min-height: 480px;
-  max-height: 680px;
-  display: block;
+.global-reach-text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Floating Tooltip in Matte Black & White */
-.global-map-tooltip-matte {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: #0d0d0d;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 14px 18px;
+.global-reach-features {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.global-feature-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.global-feature-card:hover {
+  transform: translateX(6px);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.global-feature-icon {
+  width: 42px;
+  height: 42px;
   border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
-  min-width: 220px;
-  z-index: 10;
-  animation: tooltipFadeMatte 0.25s ease-out;
-}
-
-@keyframes tooltipFadeMatte {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.tooltip-header {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--accentColor, #E5C158);
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
 }
 
-.tooltip-title {
-  font-size: 15px;
+.global-feature-title {
+  font-size: 16px;
   font-weight: 800;
   color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.global-feature-desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.45;
 }
 
-.tooltip-region {
-  font-size: 11px;
-  color: #aaaaaa;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.tooltip-body {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 8px;
-  margin-top: 4px;
-}
-
-.tooltip-status {
-  font-size: 11px;
-  color: #ffffff;
-  font-weight: 700;
+.global-reach-image-col {
+  width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 6px;
-  margin-bottom: 4px;
 }
 
-.tooltip-desc {
-  font-size: 12px;
-  color: #aaaaaa;
-  margin: 0;
-  line-height: 1.4;
+.global-reach-image-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95), 0 0 30px rgba(255, 255, 255, 0.05);
 }
 
-@media screen and (max-width: 768px) {
+.global-reach-featured-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.4s ease;
+}
+
+.global-reach-image-wrapper:hover .global-reach-featured-img {
+  transform: scale(1.03);
+}
+
+@media screen and (max-width: 900px) {
   .global-reach-section {
-    padding: 24px 0 32px 0;
+    padding: 48px 0;
   }
-  .global-reach-container {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 4px !important;
-    box-sizing: border-box !important;
-  }
-  .global-map-wrapper-matte {
-    width: 100%;
-    overflow: hidden;
-  }
-  .global-map-svg {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    display: block;
-  }
-  .global-map-tooltip-matte {
-    position: relative;
-    top: auto;
-    right: auto;
-    width: calc(100% - 24px);
-    margin: 12px auto 0 auto;
-    box-sizing: border-box;
+
+  .global-reach-split-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
   }
 }
-
-@media screen and (max-width: 480px) {
-  .global-reach-section {
-    padding: 16px 0 24px 0;
-  }
-  .global-map-tooltip-matte {
-    padding: 10px 14px;
-    margin-top: 10px;
-  }
-}
-
-

@@ -61,6 +61,83 @@
   line-height: 1.6;
 }
 
+/* Enterprise Technology 2-Column Side-by-Side Grid */
+.enterprise-tech-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.enterprise-tech-text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.enterprise-tech-image-col {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.enterprise-tech-img-wrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  overflow: visible;
+}
+
+.enterprise-tech-img-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, rgba(229, 193, 88, 0.04) 45%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.enterprise-tech-featured-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 500px;
+  height: clamp(400px, 50vh, 540px);
+  object-fit: cover;
+  object-position: center 42%;
+  border-radius: 0;
+  border: none;
+  transform: scale(1.06);
+  filter: contrast(1.15) brightness(1.05);
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 45%, #000 25%, rgba(0, 0, 0, 0.85) 50%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 45%, #000 25%, rgba(0, 0, 0, 0.85) 50%, transparent 80%);
+  mix-blend-mode: lighten;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease;
+}
+
+.enterprise-tech-img-wrapper:hover .enterprise-tech-featured-img {
+  transform: scale(1.14);
+  filter: contrast(1.2) brightness(1.1);
+}
+
+@media screen and (max-width: 900px) {
+  .enterprise-tech-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
 /* Cards Grid */
 .cards-grid-3 {
   display: grid;

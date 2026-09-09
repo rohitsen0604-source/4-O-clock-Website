@@ -7,7 +7,6 @@ import { PROJECTS_DATA } from "../data/projects";
 import { COMPANY_INFO } from "../data/company";
 import { ProjectCoverflow } from "../components/ProjectCoverflow";
 import { IndustryWheelOrbit } from "../components/IndustryWheelOrbit";
-import { GlobalReachMap } from "../components/GlobalReachMap";
 import { MdArrowOutward } from "react-icons/md";
 import "../components/styles/Pages.css";
 
@@ -49,21 +48,12 @@ export const HomePage: React.FC = () => {
       {/* Hero Section */}
       <Landing />
 
-      {/* Enterprise Technology & Global Reach Section */}
-      <section className="section-container" style={{ padding: "80px 0 40px 0" }}>
+      {/* Enterprise Technology Side-by-Side Section */}
+      <section className="section-container" style={{ padding: "80px 0" }}>
         <div style={{ maxWidth: "var(--cMaxWidth)", width: "var(--cWidth)", margin: "0 auto" }}>
-          {/* Header Row */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "flex-end",
-              gap: "32px",
-              marginBottom: "36px",
-              flexWrap: "wrap",
-            }}
-          >
-            <div style={{ maxWidth: "720px" }}>
+          <div className="enterprise-tech-grid">
+            {/* Left Column: Text Content & Capabilities CTA */}
+            <div className="enterprise-tech-text-col">
               <span className="section-tag">ENTERPRISE TECHNOLOGY</span>
               <h2
                 style={{
@@ -82,22 +72,30 @@ export const HomePage: React.FC = () => {
                   fontSize: "16px",
                   color: "#aaaaaa",
                   lineHeight: 1.7,
-                  margin: 0,
+                  marginBottom: "28px",
                 }}
               >
                 We are an enterprise technology partner dedicated to crafting high-performance digital systems, custom web & mobile software, cloud infrastructure, and AI solutions. Engineered in India, serving enterprise client partners worldwide.
               </p>
+              <div>
+                <Link to="/services" className="btn-primary">
+                  Explore Our Capabilities <MdArrowOutward />
+                </Link>
+              </div>
             </div>
-            <div>
-              <Link to="/services" className="btn-primary">
-                Explore Our Capabilities <MdArrowOutward />
-              </Link>
-            </div>
-          </div>
 
-          {/* Full-Width Large Global Reach World Vector Map */}
-          <div style={{ width: "100%", overflow: "hidden" }}>
-            <GlobalReachMap hideHeader={true} />
+            {/* Right Column: Featured Image */}
+            <div className="enterprise-tech-image-col">
+              <div className="enterprise-tech-img-wrapper">
+                <img
+                  src="/images/a51b7f496e5f3021e4fbbbb1f808325c.jpg"
+                  alt="Enterprise Technology Built Around Your Vision"
+                  className="enterprise-tech-featured-img"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

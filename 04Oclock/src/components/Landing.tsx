@@ -14,48 +14,66 @@ const Landing = ({ children }: PropsWithChildren) => {
 
   return (
     <div className="landing-section" id="landingDiv">
-      {/* Background Giant Futuristic Watermark Typography */}
-      <div className="hero-watermark-text">
-        04 O'CLOCK
+      {/* Background Hero Video with Cinematic Blur Effect */}
+      <div className="hero-video-wrapper">
+        <video
+          src="/images/herovdo.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="hero-video-element"
+        />
+        <div className="hero-video-blur-overlay" />
       </div>
 
-      {/* Central Fixed Character Image */}
+      {/* Robot Character Image in Background behind text */}
       <div className="hero-character-wrapper">
         <img
-          src="/images/rbtttt.png"
+          src="/images/7addd40bc67f5f380c018d8a8c67adf1-removebg-preview.png"
           alt="04 O'Clock Technologies Hero Character"
           className="hero-character-img"
           loading="eager"
           decoding="async"
         />
-
-        {/* Scroll Down Button Positioned Directly Under Robot's Hand */}
-        <button
-          className="hero-hand-scroll-btn"
-          onClick={handleScrollDown}
-          aria-label="Scroll Down"
-          title="Scroll Down"
-        >
-          <span className="hero-hand-scroll-text">HERE</span>
-          <MdKeyboardArrowDown className="hero-hand-scroll-icon" />
-        </button>
       </div>
+
+      {/* Background Giant Futuristic Watermark Typography */}
+      <div className="hero-watermark-text">
+        04 O'CLOCK
+      </div>
+
+      {/* Scroll Down Action Button */}
+      <button
+        className="hero-hand-scroll-btn"
+        onClick={handleScrollDown}
+        aria-label="Start Here - Scroll Down"
+        title="Start Here"
+      >
+        <span className="hero-hand-scroll-text">START HERE</span>
+        <MdKeyboardArrowDown className="hero-hand-scroll-icon" />
+      </button>
 
       {/* Foreground Content Overlay */}
       <div className="hero-content-overlay">
-        {/* Top Header Block: Split "START" (Left) and "YOUR" (Right) across Robot */}
+        {/* Top Header Block: Split "IDEAS HAVE A" (Left) and "TIME." (Right) */}
         <div className="hero-split-header">
           <h1 className="hero-split-title hero-title-left">
-            <span>START</span>
+            <span>IDEAS HAVE A</span>
           </h1>
           <h1 className="hero-split-title hero-title-right">
-            YOUR
+            TIME.
           </h1>
+        </div>
+
+        {/* Center Main Statement Block */}
+        <div className="hero-statement-block">
+          <h2 className="hero-main-statement">"WE MAKE IT COUNT"</h2>
         </div>
 
         {/* Bottom Bar: Centered Stats Metrics */}
         <div className="hero-bottom-bar">
-          {/* Centered Bottom Stats Bar (Right below robot character) */}
+          {/* Centered Bottom Stats Bar */}
           <div className="hero-stats-group">
             <div className="hero-stat-item">
               <div className="hero-stat-number">

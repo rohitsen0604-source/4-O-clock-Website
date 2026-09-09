@@ -4,7 +4,6 @@ import { Link } from "../router";
 import { PROJECTS_DATA } from "../data/projects";
 import { ProjectCoverflow } from "../components/ProjectCoverflow";
 import { VideoModal } from "../components/VideoModal";
-import { GlobalReachMap } from "../components/GlobalReachMap";
 import { MdArrowOutward } from "react-icons/md";
 import "../components/styles/Pages.css";
 
@@ -96,8 +95,6 @@ export const WorksPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Global Reach World Map Section */}
-      <GlobalReachMap />
 
       {/* Video Modal Component */}
       <VideoModal
