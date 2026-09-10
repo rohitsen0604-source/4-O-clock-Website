@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://04oclock.tech/sitemap.xml
+Sitemap: https://www.4oclocktechnologies.in/sitemap.xml
