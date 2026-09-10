@@ -41,7 +41,7 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Home — IT'S TIME TO BUILD YOUR STARTS HERE"
+        title="Home — IDEAS HAVE A TIME. WE MAKE IT COUNT."
         description={COMPANY_INFO.heroDescription}
       />
 
