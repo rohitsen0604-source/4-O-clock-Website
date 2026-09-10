@@ -58,6 +58,29 @@ export const WorkDetailPage: React.FC<WorkDetailPageProps> = ({ slug }) => {
             <span style={{ fontSize: "11px", color: "#777", textTransform: "uppercase", fontWeight: 700 }}>Category</span>
             <div style={{ fontSize: "15px", color: "var(--accentColor)", fontWeight: 700, marginTop: "4px" }}>{project.category}</div>
           </div>
+          {project.projectUrl && !project.hideVisitBtn && (
+            <div>
+              <span style={{ fontSize: "11px", color: "#777", textTransform: "uppercase", fontWeight: 700 }}>Live Platform</span>
+              <div style={{ marginTop: "4px" }}>
+                <a
+                  href={project.projectUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: "var(--accentColor)",
+                    fontSize: "14px",
+                    fontWeight: 700,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "4px",
+                    textDecoration: "none",
+                  }}
+                >
+                  Visit Site <MdArrowOutward />
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -214,9 +237,12 @@ export const WorkDetailPage: React.FC<WorkDetailPageProps> = ({ slug }) => {
       {/* CTA Banner */}
       <div style={{ maxWidth: "var(--cMaxWidth)", width: "var(--cWidth)", margin: "0 auto" }}>
         <div className="cta-banner">
-          <h3>Need a High-Impact Solution Like {project.title}?</h3>
+          <span className="section-tag" style={{ marginBottom: "10px", display: "inline-block" }}>
+            LET'S BUILD TOGETHER
+          </span>
+          <h3>Want to See a Similar Product Built for Your Brand?</h3>
           <p>
-            Contact our engineering team today to turn your product vision into a production-ready application.
+            Share your project concept with us. We'll analyze technical feasibility and provide a detailed blueprint.
           </p>
           <Link to="/contact" className="btn-primary">
             Start a Project <MdArrowOutward />

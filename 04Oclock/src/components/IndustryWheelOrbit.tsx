@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import {
   MdOutlineHealthAndSafety,
   MdOutlineAccountBalance,
@@ -7,15 +7,11 @@ import {
   MdOutlineShoppingCart,
   MdOutlineCloudQueue,
   MdOutlineLocalShipping,
-  MdOutlineDirectionsCar,
+  MdOutlineHotel,
   MdOutlinePrecisionManufacturing,
-  MdOutlineBolt,
-  MdOutlineCellTower,
-  MdOutlineSecurity,
   MdOutlineMovie,
-  MdOutlineFlight,
-  MdOutlineGavel,
-  MdOutlineEco,
+  MdOutlineBusiness,
+  MdOutlineFlashOn,
   MdClose,
   MdArrowOutward,
   MdCheck,
@@ -26,353 +22,277 @@ import "./styles/IndustryWheelOrbit.css";
 export interface IndustryItem {
   id: string;
   name: string;
+  shortName: string;
   icon: React.ReactNode;
-  solutions: string[];
+  variant?: "dark" | "white" | "accent";
   description: string;
+  solutions: string[];
 }
 
-export const INDUSTRY_WHEEL_DATA: IndustryItem[] = [
-  {
-    id: "01",
-    name: "Healthcare & Life Sciences",
-    icon: <MdOutlineHealthAndSafety />,
-    solutions: ["HIPAA Telemedicine Apps", "EHR/EMR Integrations", "Clinical AI Summaries"],
-    description: "HIPAA-compliant software, telemedicine platforms, patient portals, and clinical AI assistants engineered for healthcare providers.",
-  },
-  {
-    id: "02",
-    name: "FinTech & Banking",
-    icon: <MdOutlineAccountBalance />,
-    solutions: ["Digital Banking Portals", "Payment Processing APIs", "Ledger Reconciliation"],
-    description: "Secure banking dashboards, payment gateway integrations, automated ledger reconciliation, and real-time risk telemetry.",
-  },
-  {
-    id: "03",
-    name: "Real Estate & PropTech",
-    icon: <MdOutlineApartment />,
-    solutions: ["WebGL 3D Property Tours", "Mortgage Calculators", "Tenant SaaS Portals"],
-    description: "Interactive property portals, WebGL 3D virtual walkthroughs, lease automation engines, and tenant management SaaS.",
-  },
-  {
-    id: "04",
-    name: "Education & EdTech",
-    icon: <MdOutlineSchool />,
-    solutions: ["LMS Cloud Platforms", "Virtual Classrooms", "Student Analytics"],
-    description: "Scalable Learning Management Systems (LMS), virtual classrooms, automated grading, and interactive student analytics dashboards.",
-  },
-  {
-    id: "05",
-    name: "E-Commerce & Retail",
-    icon: <MdOutlineShoppingCart />,
-    solutions: ["Headless Next.js Stores", "Inventory Sync Engine", "Custom Checkout Flow"],
-    description: "High-conversion headless storefronts, multi-channel marketplace inventory synchronization, and sub-second checkout engines.",
-  },
-  {
-    id: "06",
-    name: "SaaS & Cloud Platforms",
-    icon: <MdOutlineCloudQueue />,
-    solutions: ["Multi-Tenant Engines", "Stripe Billing Modules", "Automated User Onboarding"],
-    description: "Multi-tenant software-as-a-service platforms built for enterprise security, subscription billing integration, and automated user onboarding.",
-  },
-  {
-    id: "07",
-    name: "Logistics & Supply Chain",
-    icon: <MdOutlineLocalShipping />,
-    solutions: ["Fleet GPS Telemetry", "Route Optimization AI", "Dispatch Dashboards"],
-    description: "Real-time fleet telemetry, GPS dispatch dashboards, automated route optimization, and digital proof-of-delivery engines.",
-  },
-  {
-    id: "08",
-    name: "Automotive & Mobility",
-    icon: <MdOutlineDirectionsCar />,
-    solutions: ["EV Charging Telemetry", "Vehicle Diagnostic Portals", "Fleet Management"],
-    description: "Electric vehicle charging network portals, connected vehicle diagnostic APIs, and mobility fleet management suites.",
-  },
-  {
-    id: "09",
-    name: "Manufacturing & Industry 4.0",
-    icon: <MdOutlinePrecisionManufacturing />,
-    solutions: ["IoT Equipment Telemetry", "Inventory Pipelines", "Quality Assurance AI"],
-    description: "IoT sensor telemetry dashboards, automated inventory pipelines, shop floor monitoring, and predictive quality control engines.",
-  },
-  {
-    id: "10",
-    name: "Energy & CleanTech",
-    icon: <MdOutlineBolt />,
-    solutions: ["Grid Telemetry Dashboards", "Renewable Energy Analytics", "Smart Meter APIs"],
-    description: "Smart grid telemetry dashboards, solar/wind asset monitoring systems, and carbon accounting compliance platforms.",
-  },
-  {
-    id: "11",
-    name: "Telecommunications",
-    icon: <MdOutlineCellTower />,
-    solutions: ["Network Operations UI", "Bandwidth Billing APIs", "Customer Portals"],
-    description: "Network operations center (NOC) dashboards, automated subscriber billing APIs, and self-service customer telecom portals.",
-  },
-  {
-    id: "12",
-    name: "Cybersecurity & Defense",
-    icon: <MdOutlineSecurity />,
-    solutions: ["Threat Telemetry Dashboards", "Audit Logging Engines", "Zero Trust Auth"],
-    description: "Real-time threat monitoring consoles, SOC event dashboards, automated compliance audit logs, and zero-trust identity architectures.",
-  },
-  {
-    id: "13",
-    name: "Media & Entertainment",
-    icon: <MdOutlineMovie />,
-    solutions: ["Video Streaming CDN", "Digital Asset Portals", "Content Monetization"],
-    description: "High-concurrency video streaming web applications, digital asset management (DAM) systems, and creator payout engines.",
-  },
-  {
-    id: "14",
-    name: "Travel & Hospitality",
-    icon: <MdOutlineFlight />,
-    solutions: ["Custom Booking Engines", "Guest Concierge Apps", "Reservation Portals"],
-    description: "High-conversion hotel & flight booking engines, guest mobile apps, contactless check-in systems, and channel managers.",
-  },
-  {
-    id: "15",
-    name: "Legal & Compliance",
-    icon: <MdOutlineGavel />,
-    solutions: ["Document Search AI", "Audit Workflow Engines", "Client Collaboration"],
-    description: "AI-assisted contract research engines, automated compliance audit workflows, and encrypted client collaboration portals.",
-  },
-  {
-    id: "16",
-    name: "Agriculture & AgTech",
-    icon: <MdOutlineEco />,
-    solutions: ["Crop Sensor Telemetry", "Supply Chain Traceability", "Farm Management"],
-    description: "Precision farming sensor dashboards, satellite crop yield monitoring, and farm-to-table supply chain traceability software.",
-  },
+export const HONEYCOMB_INDUSTRIES: IndustryItem[][] = [
+  // Row 1 (3 Hexagons)
+  [
+    {
+      id: "01",
+      name: "Healthcare & HealthTech",
+      shortName: "HEALTHCARE & HEALTHTECH",
+      icon: <MdOutlineHealthAndSafety />,
+      variant: "dark",
+      description: "Digital healthcare platforms, patient solutions & automation",
+      solutions: [
+        "Digital Healthcare Platforms",
+        "Patient Engagement & Portals",
+        "Clinical Workflow Automation",
+        "Telemedicine & EHR Integrations",
+      ],
+    },
+    {
+      id: "02",
+      name: "FinTech & Banking",
+      shortName: "FINTECH & BANKING",
+      icon: <MdOutlineAccountBalance />,
+      variant: "white",
+      description: "Secure financial platforms, payments & intelligent solutions",
+      solutions: [
+        "Secure Financial Platforms",
+        "Payment Gateway & API Integrations",
+        "Intelligent Banking Solutions",
+        "Automated Reconciliation Engines",
+      ],
+    },
+    {
+      id: "03",
+      name: "Real Estate & PropTech",
+      shortName: "REAL ESTATE & PROPTECH",
+      icon: <MdOutlineApartment />,
+      variant: "dark",
+      description: "Property platforms, CRM, marketplaces & automation",
+      solutions: [
+        "Property Management Platforms",
+        "Real Estate CRM & Leads",
+        "Digital Property Marketplaces",
+        "Lease & Contract Automation",
+      ],
+    },
+  ],
+  // Row 2 (3 Hexagons)
+  [
+    {
+      id: "04",
+      name: "Education & EdTech",
+      shortName: "EDUCATION & EDTECH",
+      icon: <MdOutlineSchool />,
+      variant: "dark",
+      description: "Learning platforms, management systems & digital classrooms",
+      solutions: [
+        "Cloud Learning Platforms (LMS)",
+        "School & Student Management Systems",
+        "Interactive Digital Classrooms",
+        "AI Assessment & Analytics",
+      ],
+    },
+    {
+      id: "05",
+      name: "E-Commerce & Retail",
+      shortName: "E-COMMERCE & RETAIL",
+      icon: <MdOutlineShoppingCart />,
+      variant: "accent",
+      description: "Online stores, marketplaces & customer experiences",
+      solutions: [
+        "High-Conversion Online Stores",
+        "Multi-Vendor Marketplace Engines",
+        "Omnichannel Customer Experiences",
+        "Inventory Sync & Checkout APIs",
+      ],
+    },
+    {
+      id: "06",
+      name: "SaaS & Technology",
+      shortName: "SAAS & TECHNOLOGY",
+      icon: <MdOutlineCloudQueue />,
+      variant: "white",
+      description: "Scalable SaaS products, dashboards & cloud platforms",
+      solutions: [
+        "Scalable Multi-Tenant SaaS Products",
+        "Real-Time Executive Dashboards",
+        "Enterprise Cloud Platforms",
+        "API & Integration Infrastructure",
+      ],
+    },
+  ],
+  // Row 3 (3 Hexagons)
+  [
+    {
+      id: "07",
+      name: "Logistics & Supply Chain",
+      shortName: "LOGISTICS & SUPPLY CHAIN",
+      icon: <MdOutlineLocalShipping />,
+      variant: "dark",
+      description: "Fleet, delivery, tracking & operational solutions",
+      solutions: [
+        "Real-Time Fleet & Dispatch Systems",
+        "On-Demand Delivery Applications",
+        "GPS Tracking & Telemetry",
+        "Operational Supply Chain Solutions",
+      ],
+    },
+    {
+      id: "08",
+      name: "Travel & Hospitality",
+      shortName: "TRAVEL & HOSPITALITY",
+      icon: <MdOutlineHotel />,
+      variant: "dark",
+      description: "Booking platforms, travel technology & guest experiences",
+      solutions: [
+        "Direct Booking Platforms",
+        "Travel Technology Engines",
+        "Seamless Guest Experiences",
+        "Reservation & Hotel PMS Apps",
+      ],
+    },
+    {
+      id: "09",
+      name: "Manufacturing & Industry 4.0",
+      shortName: "MANUFACTURING & INDUSTRY 4.0",
+      icon: <MdOutlinePrecisionManufacturing />,
+      variant: "dark",
+      description: "Digital operations, automation & intelligent systems",
+      solutions: [
+        "Digital Plant Operations",
+        "Shop Floor Automation Systems",
+        "IoT & Equipment Telemetry",
+        "Intelligent Quality Control",
+      ],
+    },
+  ],
+  // Row 4 (3 Hexagons)
+  [
+    {
+      id: "10",
+      name: "Media & Entertainment",
+      shortName: "MEDIA & ENTERTAINMENT",
+      icon: <MdOutlineMovie />,
+      variant: "dark",
+      description: "Content platforms, streaming & digital experiences",
+      solutions: [
+        "High-Concurrency Content Platforms",
+        "Live & On-Demand Streaming Apps",
+        "Digital Asset Management (DAM)",
+        "Interactive Creator Experiences",
+      ],
+    },
+    {
+      id: "11",
+      name: "Professional Services",
+      shortName: "PROFESSIONAL SERVICES",
+      icon: <MdOutlineBusiness />,
+      variant: "accent",
+      description: "Business platforms, workflow automation & client portals",
+      solutions: [
+        "Corporate Business Platforms",
+        "Enterprise Workflow Automation",
+        "Secure Client Portals",
+        "Document & Billing Systems",
+      ],
+    },
+    {
+      id: "12",
+      name: "Startups & New Ventures",
+      shortName: "STARTUPS & NEW VENTURES",
+      icon: <MdOutlineFlashOn />,
+      variant: "dark",
+      description: "MVPs, product development, SaaS & technology strategy",
+      solutions: [
+        "Rapid Production MVP Development",
+        "Full-Lifecycle Product Engineering",
+        "Scalable SaaS Architectures",
+        "Technology Strategy & Advisory",
+      ],
+    },
+  ],
 ];
 
 export const IndustryWheelOrbit: React.FC = () => {
-  const [rotationAngle, setRotationAngle] = useState<number>(0);
   const [selectedIndustry, setSelectedIndustry] = useState<IndustryItem | null>(null);
-  const [windowWidth, setWindowWidth] = useState<number>(
-    typeof window !== "undefined" ? window.innerWidth : 1200
-  );
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
-  const N = INDUSTRY_WHEEL_DATA.length;
-
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Mouse Wheel Scroll Listener - Clockwise (Down Scroll) & Anti-Clockwise (Up Scroll)
-  useEffect(() => {
-    const handleWheel = (e: WheelEvent) => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const inView = rect.top < window.innerHeight && rect.bottom > 0;
-      if (!inView) return;
-
-      const delta = e.deltaY > 0 ? 0.05 : -0.05;
-      setRotationAngle((prev) => prev + delta);
-    };
-
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener("wheel", handleWheel, { passive: true });
-    }
-    return () => {
-      if (container) {
-        container.removeEventListener("wheel", handleWheel);
-      }
-    };
-  }, []);
-
-  // Calculate dynamic scale factor based on screen width
-  const scaleFactor = windowWidth < 600 ? 0.42 : windowWidth < 900 ? 0.65 : windowWidth < 1200 ? 0.85 : 1;
 
   return (
-    <section className="wheel-section" ref={containerRef}>
-      <div className="wheel-section-head">
-        <span className="section-tag">DOMAIN EXPERTISE</span>
-        <h2 className="section-title">Industries We Serve</h2>
-        <p className="section-desc">
-          Scroll or click any industry to explore tailored software solutions.
-        </p>
-      </div>
+    <section className="honeycomb-section" id="industries">
+      <div className="honeycomb-bg-overlay" />
+      <div className="honeycomb-map-pattern" />
 
-      <div className="wheel-container">
-        {/* SVG Radial Dashed Connecting Lines Canvas */}
-        <svg
-          className="wheel-svg-spokes"
-          viewBox="0 0 1400 900"
-          preserveAspectRatio="xMidYMid meet"
-        >
-          {INDUSTRY_WHEEL_DATA.map((_, index) => {
-            const baseAngle = (index / N) * 2 * Math.PI - Math.PI / 2;
-            const angle = baseAngle + rotationAngle;
-            const radius = (index % 2 === 0 ? 320 : 420);
-
-            const cx = 700;
-            const cy = 450;
-            const hubRadius = 110;
-
-            const x1 = cx + hubRadius * Math.cos(angle);
-            const y1 = cy + hubRadius * Math.sin(angle);
-            const x2 = cx + radius * Math.cos(angle);
-            const y2 = cy + radius * Math.sin(angle);
-
-            return (
-              <line
-                key={index}
-                x1={x1}
-                y1={y1}
-                x2={x2}
-                y2={y2}
-                stroke="rgba(229, 193, 88, 0.35)"
-                strokeWidth="1.5"
-                strokeDasharray="4 4"
-              />
-            );
-          })}
-        </svg>
-
-        {/* Central Circular Hub */}
-        <div className="wheel-center-hub">
-          <img
-            src="/images/circlelogo.png"
-            alt="04 O'Clock Technologies Emblem"
-            className="wheel-hub-circle-img"
-          />
-          <h3 className="wheel-hub-title">INDUSTRIES WE SERVE</h3>
+      <div style={{ maxWidth: "var(--cMaxWidth)", width: "var(--cWidth)", margin: "0 auto", position: "relative", zIndex: 2 }}>
+        {/* Section Header */}
+        <div className="honeycomb-head">
+          <span className="honeycomb-tag">INDUSTRIES WE SERVE</span>
+          <h2 className="honeycomb-title">Technology Solutions Built Across Industry Domains</h2>
+          <p className="honeycomb-subtitle">
+            Engineered digital products, scalable cloud platforms, and automated software solutions tailored for high-growth sectors.
+          </p>
         </div>
 
-        {/* Outer Circular Industry Nodes */}
-        <div className="wheel-nodes-layer">
-          {INDUSTRY_WHEEL_DATA.map((ind, index) => {
-            const baseAngle = (index / N) * 2 * Math.PI - Math.PI / 2;
-            const angle = baseAngle + rotationAngle;
-            const radius = (index % 2 === 0 ? 320 : 420) * scaleFactor;
-
-            const x = Math.cos(angle) * radius;
-            const y = Math.sin(angle) * radius;
-
-            return (
-              <div
-                key={ind.id}
-                className="wheel-node-item"
-                onClick={() => setSelectedIndustry(ind)}
-                style={{
-                  left: `calc(50% + ${x}px - 50px)`,
-                  top: `calc(50% + ${y}px - 40px)`,
-                }}
-              >
-                <div className="wheel-node-icon-ring">{ind.icon}</div>
-                <div className="wheel-node-label">{ind.name}</div>
-              </div>
-            );
-          })}
+        {/* Responsive Honeycomb Matrix */}
+        <div className="honeycomb-matrix">
+          {HONEYCOMB_INDUSTRIES.map((row, rIdx) => (
+            <div key={`row-${rIdx}`} className="honeycomb-row">
+              {row.map((ind) => {
+                const variantClass = ind.variant ? `variant-${ind.variant}` : "variant-dark";
+                return (
+                  <div
+                    key={ind.id}
+                    className={`hex-outer ${variantClass}`}
+                    onClick={() => setSelectedIndustry(ind)}
+                    title={`Click to explore ${ind.name}`}
+                  >
+                    <div className="hex-inner">
+                      <div className="hex-icon">{ind.icon}</div>
+                      <div className="hex-label">{ind.shortName}</div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          ))}
         </div>
-      </div>
-
-      {/* Mobile Touch Card Grid (<768px) */}
-      <div className="wheel-mobile-grid">
-        {INDUSTRY_WHEEL_DATA.map((ind) => (
-          <div
-            key={`mob-ind-${ind.id}`}
-            className="wheel-mobile-card"
-            onClick={() => setSelectedIndustry(ind)}
-          >
-            <div className="wheel-mobile-icon-ring">{ind.icon}</div>
-            <div className="wheel-mobile-card-title">{ind.name}</div>
-          </div>
-        ))}
       </div>
 
       {/* Industry Detail Spotlight Modal */}
       {selectedIndustry && (
-        <div
-          className="orbit-spotlight-backdrop"
-          onClick={() => setSelectedIndustry(null)}
-        >
-          <div
-            className="orbit-spotlight-card"
-            onClick={(e) => e.stopPropagation()}
-          >
+        <div className="honeycomb-modal-backdrop" onClick={() => setSelectedIndustry(null)}>
+          <div className="honeycomb-modal-card" onClick={(e) => e.stopPropagation()}>
             <button
-              className="orbit-spotlight-close"
+              className="honeycomb-modal-close"
               onClick={() => setSelectedIndustry(null)}
-              aria-label="Close"
+              aria-label="Close modal"
             >
               <MdClose />
             </button>
 
-            <span className="section-tag" style={{ marginBottom: "8px" }}>
-              {selectedIndustry.id} — INDUSTRY DOMAIN
-            </span>
-            <h3
-              style={{
-                fontSize: "30px",
-                color: "#ffffff",
-                fontWeight: 800,
-                marginBottom: "12px",
-              }}
-            >
-              {selectedIndustry.name}
-            </h3>
-            <p
-              style={{
-                fontSize: "15px",
-                color: "#ccc",
-                lineHeight: 1.6,
-                marginBottom: "24px",
-              }}
-            >
-              {selectedIndustry.description}
-            </p>
+            <div className="honeycomb-modal-header">
+              <div className="honeycomb-modal-icon-box">{selectedIndustry.icon}</div>
+              <div>
+                <span className="honeycomb-modal-tag">{selectedIndustry.id} — INDUSTRY DOMAIN</span>
+                <h3 className="honeycomb-modal-title">{selectedIndustry.name}</h3>
+              </div>
+            </div>
 
-            <div style={{ marginBottom: "24px" }}>
-              <h4
-                style={{
-                  fontSize: "13px",
-                  color: "var(--accentColor)",
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  marginBottom: "12px",
-                }}
-              >
-                Tailored Digital Solutions & Engineering Services:
-              </h4>
-              <ul
-                style={{
-                  listStyle: "none",
-                  padding: 0,
-                  margin: 0,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "8px",
-                }}
-              >
-                {selectedIndustry.solutions.map((sol) => (
-                  <li
-                    key={sol}
-                    style={{
-                      fontSize: "14px",
-                      color: "#ddd",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "8px",
-                    }}
-                  >
-                    <MdCheck style={{ color: "var(--accentColor)", fontSize: "18px" }} />
-                    {sol}
+            <p className="honeycomb-modal-desc">{selectedIndustry.description}</p>
+
+            <div className="honeycomb-modal-solutions">
+              <h4 className="honeycomb-solutions-heading">Key Capabilities & Deliverables:</h4>
+              <ul className="honeycomb-solutions-list">
+                {selectedIndustry.solutions.map((sol, idx) => (
+                  <li key={idx}>
+                    <MdCheck className="honeycomb-check-icon" />
+                    <span>{sol}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div style={{ paddingTop: "20px", borderTop: "1px solid rgba(255,255,255,0.08)", display: "flex", justifyContent: "flex-end" }}>
+            <div className="honeycomb-modal-actions">
               <Link
                 to="/contact"
                 className="btn-primary"
-                style={{ padding: "10px 24px", fontSize: "13px" }}
                 onClick={() => setSelectedIndustry(null)}
               >
                 Discuss Industry Project <MdArrowOutward />

@@ -2,7 +2,6 @@ import "./App.css";
 import { RouterProvider, useRouter } from "./router";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import SocialIcons from "./components/SocialIcons";
 import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
 import { ServicesPage } from "./pages/ServicesPage";
@@ -45,7 +44,6 @@ function AppContent() {
   return (
     <div className="container-main">
       <Navbar />
-      <SocialIcons />
 
       <main className="main-body" id="smooth-wrapper">
         <div id="smooth-content">

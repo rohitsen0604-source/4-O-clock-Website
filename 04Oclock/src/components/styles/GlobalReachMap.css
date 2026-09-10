@@ -1,0 +1,120 @@
+/* Global Reach Section - Matte Black 2-Column Side-by-Side Theme */
+
+.global-reach-section {
+  width: 100%;
+  padding: 80px 0;
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.global-reach-container {
+  max-width: var(--cMaxWidth);
+  width: var(--cWidth);
+  margin: 0 auto;
+}
+
+.global-reach-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.global-reach-text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.global-reach-features {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.global-feature-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.global-feature-card:hover {
+  transform: translateX(6px);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.global-feature-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--accentColor, #E5C158);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.global-feature-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.global-feature-desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.global-reach-image-col {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.global-reach-image-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95), 0 0 30px rgba(255, 255, 255, 0.05);
+}
+
+.global-reach-featured-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.4s ease;
+}
+
+.global-reach-image-wrapper:hover .global-reach-featured-img {
+  transform: scale(1.03);
+}
+
+@media screen and (max-width: 900px) {
+  .global-reach-section {
+    padding: 48px 0;
+  }
+
+  .global-reach-split-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}

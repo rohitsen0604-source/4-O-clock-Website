@@ -61,19 +61,35 @@ export const GlassContact: React.FC<GlassContactProps> = () => {
                 <FaEnvelope />
               </div>
               <div className="glass-info-text">
-                <a href={`mailto:contact@sanatcreatives.com`}>
-                  contact@sanatcreatives.com
+                <a href="mailto:contact@4oclocktech.com">
+                  contact@4oclocktech.com
                 </a>
               </div>
             </div>
 
-            {/* Location Row */}
+            {/* Head Office (Australia) */}
             <div className="glass-info-item">
               <div className="glass-info-icon-box">
                 <FaMapMarkerAlt />
               </div>
               <div className="glass-info-text">
-                05 Triveni Tower 3rd Floor, Central Avenue, GandhiPutla, Itwari, Nagpur 440002, India.
+                <span style={{ fontSize: "11px", fontWeight: 700, color: "var(--accentColor)", display: "block", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "2px" }}>
+                  Head Office
+                </span>
+                1 Barrett, Kensington, Victoria, Australia
+              </div>
+            </div>
+
+            {/* India Office (Indore) */}
+            <div className="glass-info-item">
+              <div className="glass-info-icon-box">
+                <FaMapMarkerAlt />
+              </div>
+              <div className="glass-info-text">
+                <span style={{ fontSize: "11px", fontWeight: 700, color: "var(--accentColor)", display: "block", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "2px" }}>
+                  India Office
+                </span>
+                Scheme No 114, Dewas Road, Indore, Madhya Pradesh, India
               </div>
             </div>
           </div>

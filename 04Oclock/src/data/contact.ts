@@ -1,10 +1,10 @@
 export const CONTACT_CONFIG = {
-  email: "contact@04oclock.tech",
-  phone: "+1 (555) 040-2026",
-  secondaryPhone: "+94 71 350 66 55",
-  location: "Global Technology Headquarters",
-  address: "Innovation Tower, Suite 400, Tech Park",
-  businessHours: "Monday – Friday: 09:00 AM – 06:00 PM (UTC)",
+  email: "contact@4oclocktech.com",
+  headOffice: "1 Barrett, Kensington, Victoria, Australia",
+  indiaOffice: "Scheme No 114, Dewas Road, Indore, Madhya Pradesh, India",
+  location: "Kensington, Australia & Indore, India",
+  address: "Scheme No 114, Dewas Road, Indore, Madhya Pradesh, India",
+  businessHours: "Monday – Friday: 09:00 AM – 06:00 PM (IST / AEST)",
   socials: [
     { name: "GitHub", url: "https://github.com/udithavithanage" },
     { name: "LinkedIn", url: "https://www.linkedin.com/in/uditha-vithanage-06589631b" },

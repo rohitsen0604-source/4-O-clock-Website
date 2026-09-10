@@ -1,274 +1,267 @@
 import React, { useState } from "react";
 import {
-  MdOutlineCode,
-  MdOutlineFlashOn,
-  MdOutlineLayers,
-  MdOutlineShield,
   MdOutlineHeadsetMic,
+  MdOutlineCode,
+  MdOutlinePeople,
+  MdOutlineTrendingUp,
+  MdOutlinePublic,
+  MdOutlineLightbulb,
 } from "react-icons/md";
-import { WHY_CHOOSE_US } from "../data/company";
 import "./styles/WhyChooseUsDiagram.css";
 
-const FEATURE_META = [
+// 04 O'Clock Why Choose Us 3D Question Mark Diagram
+
+export interface WhyChoosePillar {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  side: "left" | "right";
+  icon: React.ReactNode;
+  // SVG Arrow Coordinates (startX, startY -> targetX, targetY)
+  line: {
+    x1: number;
+    y1: number;
+    x2: number;
+    y2: number;
+  };
+}
+
+export const WHY_CHOOSE_PILLARS: WhyChoosePillar[] = [
+  // Left Side Callouts (pointing to character)
   {
-    icon: <MdOutlineCode />,
-    color: "#38BDF8",
-    rgb: "56, 189, 248",
-  },
-  {
-    icon: <MdOutlineFlashOn />,
-    color: "#F59E0B",
-    rgb: "245, 158, 11",
-  },
-  {
-    icon: <MdOutlineLayers />,
-    color: "#E5C158",
-    rgb: "229, 193, 88",
-  },
-  {
-    icon: <MdOutlineShield />,
-    color: "#10B981",
-    rgb: "16, 185, 129",
-  },
-  {
+    id: "support",
+    title: "CLIENT SUPPORT",
+    subtitle: "24/7 SLA Guarantees",
+    description: "Round-the-clock dedicated technical support, continuous monitoring & proactive system health telemetry.",
+    side: "left",
     icon: <MdOutlineHeadsetMic />,
-    color: "#A855F7",
-    rgb: "168, 85, 247",
+    line: { x1: 290, y1: 170, x2: 440, y2: 210 },
+  },
+  {
+    id: "strategy",
+    title: "OUR STRATEGY",
+    subtitle: "Zero Technical Debt",
+    description: "Agile sprints, reusable modular design tokens, robust microservices & enterprise clean architecture.",
+    side: "left",
+    icon: <MdOutlineCode />,
+    line: { x1: 290, y1: 300, x2: 410, y2: 330 },
+  },
+  {
+    id: "team",
+    title: "EXPERT TEAM",
+    subtitle: "Senior Full-Stack Talent",
+    description: "Engineered by senior software architects, UI/UX strategists, AI experts & DevOps leaders.",
+    side: "left",
+    icon: <MdOutlinePeople />,
+    line: { x1: 290, y1: 430, x2: 385, y2: 440 },
+  },
+
+  // Right Side Callouts (pointing to question mark)
+  {
+    id: "growth",
+    title: "MORE GROWTH",
+    subtitle: "Rapid Delivery & Speed",
+    description: "Accelerate time-to-market by up to 40% with pre-tested scalable modules & high-conversion engineering.",
+    side: "right",
+    icon: <MdOutlineTrendingUp />,
+    line: { x1: 810, y1: 170, x2: 660, y2: 165 },
+  },
+  {
+    id: "reach",
+    title: "MORE REACH",
+    subtitle: "Bank-Grade Security",
+    description: "Global multi-region cloud deployment, strict data privacy compliance & scalable enterprise infrastructure.",
+    side: "right",
+    icon: <MdOutlinePublic />,
+    line: { x1: 810, y1: 300, x2: 680, y2: 290 },
+  },
+  {
+    id: "ideas",
+    title: "CREATIVE IDEAS",
+    subtitle: "Full Product Ownership",
+    description: "Custom digital products, 3D WebGL features, tailormade UX innovations & 100% intellectual property ownership.",
+    side: "right",
+    icon: <MdOutlineLightbulb />,
+    line: { x1: 810, y1: 430, x2: 630, y2: 440 },
   },
 ];
 
 export const WhyChooseUsDiagram: React.FC = () => {
-  const [activeIdx, setActiveIdx] = useState<number>(0);
+  const [activeId, setActiveId] = useState<string | null>(null);
 
-  // SVG Canvas dimensions
   const svgWidth = 1100;
-  const svgHeight = 440;
-
-  // Geometry parameters matching Screenshot 1
-  const pillWidth = 460;
-  const pillHeight = 52;
-  const pillStartX = 40;
-  const rowStartY = 45;
-  const rowGap = 72;
-
-  // Concentric Hub Center (Right side)
-  const cxHub = 860;
-  const cyHub = 200;
-
-  // Arc Radii for 5 concentric rings (Innermost to Outermost)
-  const arcRadii = [65, 95, 125, 155, 185];
-
-  // Helper to get arc start point for item i on top of the arc ring (angle = -110deg)
-  const getArcStartPoint = (index: number) => {
-    const r = arcRadii[index];
-    // Start angle at top of semicircle (~ -120deg)
-    const angleRad = (-120 * Math.PI) / 180;
-    const x = cxHub + r * Math.cos(angleRad);
-    const y = cyHub + r * Math.sin(angleRad);
-    return { x, y };
-  };
+  const svgHeight = 560;
 
   return (
-    <section className="why-choose-us-section">
-      <div className="section-head" style={{ marginBottom: "30px", textAlign: "center" }}>
-        <span className="section-tag">THE 04 O'CLOCK DIFFERENCE</span>
-        <h2 className="section-title">Why Choose Us</h2>
-        <p className="section-desc">
-          We combine enterprise engineering rigor with startup speed and aesthetic excellence.
-        </p>
-      </div>
+    <section className="why-choose-section">
+      {/* Background Lighting & Glow */}
+      <div className="why-choose-bg-glow" />
 
-      {/* Main Infographic Layout Canvas */}
-      <div className="why-choose-canvas-wrapper">
-        <div className="why-choose-canvas-inner" style={{ width: `${svgWidth}px` }}>
-          
-          {/* SVG Connecting Cables & Concentric Arc Rings Layer */}
-          <svg
-            className="why-choose-svg-layer"
-            viewBox={`0 0 ${svgWidth} ${svgHeight}`}
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs>
-              {/* Laser Glow Filter */}
-              <filter id="ringGlow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="3.5" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
-            </defs>
-
-            {/* Connecting Wire Curves from Left Pills to Concentric Arcs */}
-            {WHY_CHOOSE_US.map((_, i) => {
-              const meta = FEATURE_META[i % FEATURE_META.length];
-              const pillRightX = pillStartX + pillWidth;
-              const pillCenterY = rowStartY + i * rowGap + pillHeight / 2;
-              const arcStart = getArcStartPoint(i);
-              const isActive = activeIdx === i;
-
-              // Cubic Bezier cable path
-              const cableD = `M ${pillRightX} ${pillCenterY} C ${pillRightX + 130} ${pillCenterY}, ${arcStart.x - 70} ${arcStart.y}, ${arcStart.x} ${arcStart.y}`;
-
-              return (
-                <g key={`cable-${i}`} className={`cable-group ${isActive ? "active" : ""}`}>
-                  {/* Base Wire Track */}
-                  <path
-                    d={cableD}
-                    stroke="rgba(255, 255, 255, 0.15)"
-                    strokeWidth="2.5"
-                    strokeDasharray="4 4"
-                    fill="none"
-                  />
-
-                  {/* Active Laser Flow Line */}
-                  <path
-                    d={cableD}
-                    stroke={meta.color}
-                    strokeWidth={isActive ? "4" : "2.5"}
-                    strokeDasharray="90 180"
-                    fill="none"
-                    className="cable-laser-flow"
-                    filter="url(#ringGlow)"
-                    style={{
-                      opacity: isActive ? 1 : 0.65,
-                    }}
-                  />
-                </g>
-              );
-            })}
-
-            {/* Concentric Arc Rings around Right Hub (Screenshot 1 Layout) */}
-            {WHY_CHOOSE_US.map((_, i) => {
-              const meta = FEATURE_META[i % FEATURE_META.length];
-              const r = arcRadii[i];
-              const isActive = activeIdx === i;
-
-              // SVG Semicircle Arc from -120deg to 120deg (sweep around right side)
-              const startAngleRad = (-120 * Math.PI) / 180;
-              const endAngleRad = (120 * Math.PI) / 180;
-
-              const x1 = cxHub + r * Math.cos(startAngleRad);
-              const y1 = cyHub + r * Math.sin(startAngleRad);
-              const x2 = cxHub + r * Math.cos(endAngleRad);
-              const y2 = cyHub + r * Math.sin(endAngleRad);
-
-              const arcD = `M ${x1} ${y1} A ${r} ${r} 0 1 1 ${x2} ${y2}`;
-
-              return (
-                <g key={`arc-ring-${i}`} className={`arc-ring-group ${isActive ? "active" : ""}`}>
-                  {/* Outer Concentric Arc Ring */}
-                  <path
-                    d={arcD}
-                    stroke={meta.color}
-                    strokeWidth={isActive ? "10" : "7"}
-                    strokeLinecap="round"
-                    fill="none"
-                    style={{
-                      transition: "all 0.35s ease",
-                      filter: isActive
-                        ? `drop-shadow(0 0 14px ${meta.color})`
-                        : `drop-shadow(0 0 4px ${meta.color}55)`,
-                      opacity: isActive ? 1 : 0.75,
-                    }}
-                  />
-                </g>
-              );
-            })}
-          </svg>
-
-          {/* Left Side: Staggered Colored Pill Badges (Screenshot 1 Format) */}
-          <div className="why-choose-pills-list">
-            {WHY_CHOOSE_US.map((item, i) => {
-              const meta = FEATURE_META[i % FEATURE_META.length];
-              const isActive = activeIdx === i;
-              const topY = rowStartY + i * rowGap;
-
-              return (
-                <div
-                  key={item.title}
-                  className={`why-choose-pill-badge ${isActive ? "active" : ""}`}
-                  onMouseEnter={() => setActiveIdx(i)}
-                  onClick={() => setActiveIdx(i)}
-                  style={
-                    {
-                      top: `${topY}px`,
-                      left: `${pillStartX}px`,
-                      width: `${pillWidth}px`,
-                      height: `${pillHeight}px`,
-                      "--pill-color": meta.color,
-                      "--pill-rgb": meta.rgb,
-                    } as React.CSSProperties
-                  }
-                >
-                  {/* Left Darker Number Box (01, 02, 03, 04, 05) */}
-                  <div className="pill-number-box">
-                    0{i + 1}
-                  </div>
-
-                  {/* Middle Title & Highlight Subtitle */}
-                  <div className="pill-content-box">
-                    <span className="pill-title">{item.title}</span>
-                    <span className="pill-highlight">• {item.highlight}</span>
-                  </div>
-
-                  {/* Right Circle Icon Badge */}
-                  <div className="pill-icon-circle">
-                    {meta.icon}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Right Center Hub - Perfectly Centered at (cxHub, cyHub) */}
-          <div
-            className="why-choose-center-hub"
-            style={{
-              left: `${cxHub}px`,
-              top: `${cyHub}px`,
-              transform: "translate(-50%, -50%)",
-            }}
-          >
-            <div className="hub-inner-emblem">
-              <span className="hub-center-text">04</span>
-            </div>
-          </div>
-
+      <div style={{ maxWidth: "var(--cMaxWidth)", width: "var(--cWidth)", margin: "0 auto", position: "relative", zIndex: 2 }}>
+        {/* Section Heading */}
+        <div className="why-choose-head">
+          <span className="why-choose-tag">THE 04 O'CLOCK DIFFERENCE</span>
+          <h2 className="why-choose-title">
+            WHY <span className="why-choose-title-highlight">CHOOSE US?</span>
+          </h2>
+          <p className="why-choose-desc">
+            We combine enterprise engineering rigor with startup speed and aesthetic excellence.
+          </p>
         </div>
-      </div>
 
-      {/* Mobile Vertical Cards Stack (<900px) */}
-      <div className="why-choose-mobile-list">
-        {WHY_CHOOSE_US.map((item, i) => {
-          const meta = FEATURE_META[i % FEATURE_META.length];
-          return (
-            <div
-              key={`mob-why-${item.title}`}
-              className="why-choose-mobile-card"
-              style={{ borderLeftColor: meta.color }}
+        {/* Desktop Interactive Graphic Canvas */}
+        <div className="why-choose-canvas-wrapper">
+          <div className="why-choose-canvas" style={{ width: `${svgWidth}px`, height: `${svgHeight}px` }}>
+            
+            {/* SVG Pointer Lines & Arrowheads Layer */}
+            <svg
+              className="why-choose-svg"
+              viewBox={`0 0 ${svgWidth} ${svgHeight}`}
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div className="why-choose-mobile-card-head">
-                <div
-                  className="why-choose-mobile-icon-badge"
-                  style={{ backgroundColor: `rgba(${meta.rgb}, 0.12)`, color: meta.color, borderColor: `rgba(${meta.rgb}, 0.3)` }}
+              <defs>
+                {/* Arrowhead Marker */}
+                <marker
+                  id="arrow-head"
+                  viewBox="0 0 10 10"
+                  refX="6"
+                  refY="5"
+                  markerWidth="7"
+                  markerHeight="7"
+                  orient="auto-start-reverse"
                 >
-                  {meta.icon}
-                </div>
-                <div>
-                  <span className="why-choose-mobile-num" style={{ color: meta.color }}>
-                    0{i + 1} • THE 04 ADVANTAGE
-                  </span>
-                  <h4 className="why-choose-mobile-title">{item.title}</h4>
-                </div>
-              </div>
-              <div className="why-choose-mobile-highlight" style={{ color: meta.color }}>
-                • {item.highlight}
-              </div>
-              <p className="why-choose-mobile-desc">{item.description}</p>
+                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#ffffff" />
+                </marker>
+                <marker
+                  id="arrow-head-active"
+                  viewBox="0 0 10 10"
+                  refX="6"
+                  refY="5"
+                  markerWidth="8"
+                  markerHeight="8"
+                  orient="auto-start-reverse"
+                >
+                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#E5C158" />
+                </marker>
+              </defs>
+
+              {WHY_CHOOSE_PILLARS.map((p) => {
+                const isActive = activeId === p.id;
+                return (
+                  <g key={`line-${p.id}`}>
+                    {/* Shadow / Base Line */}
+                    <line
+                      x1={p.line.x1}
+                      y1={p.line.y1}
+                      x2={p.line.x2}
+                      y2={p.line.y2}
+                      stroke={isActive ? "#E5C158" : "rgba(255, 255, 255, 0.4)"}
+                      strokeWidth={isActive ? "2.5" : "1.5"}
+                      markerEnd={isActive ? "url(#arrow-head-active)" : "url(#arrow-head)"}
+                      style={{ transition: "all 0.3s ease" }}
+                    />
+                    {/* Connection Point Pulse Dot */}
+                    <circle
+                      cx={p.line.x2}
+                      cy={p.line.y2}
+                      r={isActive ? 6 : 4}
+                      fill={isActive ? "#E5C158" : "#ffffff"}
+                      style={{ transition: "all 0.3s ease" }}
+                    />
+                  </g>
+                );
+              })}
+            </svg>
+
+            {/* Central 3D Question Mark & Orange Thinking Figure Asset */}
+            <div className="why-choose-center-graphic">
+              <img
+                src="/images/why_choose_us_figure.jpg"
+                alt="Why Choose Us 3D Question Mark Figure"
+                className="why-choose-3d-img"
+              />
             </div>
-          );
-        })}
+
+            {/* Left Side Callout Cards */}
+            <div className="why-choose-col why-choose-left-col">
+              {WHY_CHOOSE_PILLARS.filter((p) => p.side === "left").map((p) => {
+                const isActive = activeId === p.id;
+                return (
+                  <div
+                    key={p.id}
+                    className={`why-choose-card ${isActive ? "active" : ""}`}
+                    onMouseEnter={() => setActiveId(p.id)}
+                    onMouseLeave={() => setActiveId(null)}
+                    onClick={() => setActiveId(activeId === p.id ? null : p.id)}
+                  >
+                    <div className="why-choose-card-head">
+                      <span className="why-choose-card-icon">{p.icon}</span>
+                      <div>
+                        <h3 className="why-choose-card-title">{p.title}</h3>
+                        <span className="why-choose-card-sub">{p.subtitle}</span>
+                      </div>
+                    </div>
+                    <p className="why-choose-card-desc">{p.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Right Side Callout Cards */}
+            <div className="why-choose-col why-choose-right-col">
+              {WHY_CHOOSE_PILLARS.filter((p) => p.side === "right").map((p) => {
+                const isActive = activeId === p.id;
+                return (
+                  <div
+                    key={p.id}
+                    className={`why-choose-card ${isActive ? "active" : ""}`}
+                    onMouseEnter={() => setActiveId(p.id)}
+                    onMouseLeave={() => setActiveId(null)}
+                    onClick={() => setActiveId(activeId === p.id ? null : p.id)}
+                  >
+                    <div className="why-choose-card-head">
+                      <span className="why-choose-card-icon">{p.icon}</span>
+                      <div>
+                        <h3 className="why-choose-card-title">{p.title}</h3>
+                        <span className="why-choose-card-sub">{p.subtitle}</span>
+                      </div>
+                    </div>
+                    <p className="why-choose-card-desc">{p.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+
+          </div>
+        </div>
+
+        {/* Mobile & Tablet Responsive Fallback View (< 1000px) */}
+        <div className="why-choose-mobile-view">
+          <div className="why-choose-mobile-center-img-box">
+            <img
+              src="/images/why_choose_us_figure.jpg"
+              alt="Why Choose Us 3D Figure"
+              className="why-choose-mobile-3d-img"
+            />
+          </div>
+
+          <div className="why-choose-mobile-grid">
+            {WHY_CHOOSE_PILLARS.map((p) => (
+              <div key={`mob-${p.id}`} className="why-choose-mobile-card">
+                <div className="why-choose-mobile-icon-box">{p.icon}</div>
+                <div>
+                  <h3 className="why-choose-mobile-title">{p.title}</h3>
+                  <span className="why-choose-mobile-sub">{p.subtitle}</span>
+                  <p className="why-choose-mobile-desc">{p.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
 };
-

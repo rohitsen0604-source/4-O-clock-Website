@@ -616,36 +616,6 @@ export const PROJECTS_DATA: ProjectItem[] = [
     ],
   },
   {
-    id: "11",
-    slug: "tradecraft-fintech-terminal",
-    title: "TradeCraft Financial Terminal",
-    category: "FinTech",
-    industry: "Trading & Investment Telemetry",
-    shortDesc: "Professional trading workstation providing high-frequency candlestick charts and algorithmic execution.",
-    fullDesc:
-      "TradeCraft delivers institutional-grade market data, custom technical indicators, and automated order execution for active traders.",
-    client: "TradeCraft Capital",
-    year: "2026",
-    technologies: ["Next.js", "TypeScript", "WebSockets", "Rust", "TradingView Lightweight Charts"],
-    services: ["FinTech", "Web Development", "High-Throughput APIs"],
-    image: "/Projects/b77aec47-9adb-4f23-8ada-b620430a39ef.png",
-    videoPoster: "/Projects/b77aec47-9adb-4f23-8ada-b620430a39ef.png",
-    projectUrl: "https://tradecraft.04oclock.tech",
-    challenge:
-      "Retail trading terminals struggled with chart lag during sudden market volatility spikes.",
-    solution:
-      "We developed a WebGL-accelerated charting engine powered by a high-concurrency Rust WebSocket backend.",
-    keyFeatures: [
-      "60 FPS real-time WebGL candlestick rendering",
-      "Algorithmic strategy backtesting sandbox",
-      "Sub-10ms order execution route",
-    ],
-    results: [
-      "Handled 50,000 simultaneous live order streams smoothly",
-      "Recognized for top chart responsiveness in 2026 Fintech Awards",
-    ],
-  },
-  {
     id: "12",
     slug: "scalyx-ai-retail-platform",
     title: "Scalyx",
@@ -924,6 +894,281 @@ export const PROJECTS_DATA: ProjectItem[] = [
       "Over 500,000+ liters of farm-fresh UHT milk & pure ghee distributed daily",
       "99.8% customer satisfaction score across retail and institutional buyers",
       "Sub-second global website loading speed with 3D product showcase",
+    ],
+  },
+  {
+    id: "19",
+    slug: "trider-service-providers",
+    title: "Trider",
+    category: "Web",
+    industry: "On-Demand Services & Service Providers Network",
+    shortDesc:
+      "On-demand service booking platform connecting customers with trusted local service providers for home services, cleaning, maintenance, and expert assistance.",
+    fullDesc:
+      "Trider Service Providers is an innovative on-demand service booking platform engineered to connect households and business owners with verified local service professionals. Featuring real-time booking history telemetry, organized service category catalog, sub-second login/signup authentication, and direct provider scheduling.",
+    client: "Trider Services Inc.",
+    year: "2026",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Node.js",
+      "Express",
+      "Tailwind CSS",
+      "MongoDB",
+    ],
+    services: [
+      "Web Development",
+      "UI/UX Design",
+      "On-Demand Services Engine",
+      "Cloud Infrastructure",
+    ],
+    image: "/Projects/trider.jpg",
+    videoPoster: "/Projects/trider.jpg",
+    projectUrl: "https://triderapp.com/",
+    challenge:
+      "Connecting customers with verified home and maintenance service providers in real time while maintaining transparent booking history and effortless service scheduling.",
+    solution:
+      "We engineered a sleek, high-concurrency web application with intuitive service categorization, real-time booking history telemetry, and secure user authentication.",
+    keyFeatures: [
+      "On-demand home, cleaning & maintenance service booking portal",
+      "Real-time booking history & live service progress tracking",
+      "Categorized service directory & verified provider listings",
+      "User-friendly instant Login & SignUp onboarding authentication",
+    ],
+    results: [
+      "Streamlined service booking experience for hundreds of active users",
+      "Sub-second page load times with responsive mobile & desktop UI",
+      "100% transparent booking history and service provider management",
+    ],
+  },
+  {
+    id: "20",
+    slug: "vlands-real-estate-land-co-investing",
+    title: "Vlands",
+    category: "FinTech",
+    industry: "Land Co-Investing Marketplace & Real Estate Tech",
+    shortDesc:
+      "Fractional land co-investing marketplace empowering investors to acquire legally-backed, documented UDS ownership and buy or sell land assets in 5 minutes.",
+    fullDesc:
+      "Vlands (www.vlands.app) is an innovative land co-investing marketplace designed to democratize high-yield real estate investments. By fractionalizing ownership through legally backed Undivided Share (UDS) documentation, Vlands allows individual investors to access pre-vetted institutional-grade land assets, track portfolio valuations in real time, and buy or sell holdings in just 5 minutes with zero hassle.",
+    client: "Vlands Capital Labs",
+    year: "2026",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "UDS Telemetry",
+    ],
+    services: [
+      "FinTech Development",
+      "Real Estate Tech",
+      "UI/UX Design",
+      "Legal UDS Fractionalization",
+    ],
+    image: "/Projects/vlands.jpg",
+    videoPoster: "/Projects/vlands.jpg",
+    projectUrl: "https://www.vlands.app/",
+    challenge:
+      "High capital barriers and complex legal documentation previously restricted prime commercial and residential land investments to institutional entities.",
+    solution:
+      "We engineered a secure land co-investing platform with legally backed UDS fractionalization, sub-second portfolio analytics, and a 5-minute instant buy/sell transaction workflow.",
+    keyFeatures: [
+      "Fractional land co-investing with legally-backed UDS ownership",
+      "5-minute instant land buy & sell transaction engine",
+      "Curated marketplace of pre-vetted, high-return land assets",
+      "Real-time investor portfolio telemetry & live market deals",
+    ],
+    results: [
+      "Sub-5 minute land co-investment transaction speed benchmark",
+      "100% legally documented UDS title verification across listed properties",
+      "Empowered hundreds of retail investors to own institutional-grade land assets",
+    ],
+  },
+  {
+    id: "21",
+    slug: "let-me-trip-lifestyle-store",
+    title: "Let Me Trip",
+    category: "Web",
+    industry: "AI Travel & Web3 Lifestyle Platform",
+    shortDesc:
+      "Next-generation AI travel, Web3 tokenomics, and lifestyle experience platform delivering immersive trip discovery and token-backed rewards.",
+    fullDesc:
+      "Let Me Trip (www.letmetrip.store) is a pioneering Web3 lifestyle and AI travel discovery platform engineered to transform personal adventure planning. Blending vibrant artistic digital aesthetics with decentralized LMT token rewards, interactive roadmap milestones, technical documentation, and curated travel experiences, Let Me Trip empowers modern explorers to discover, plan, and earn from every journey.",
+    client: "Let Me Trip Labs",
+    year: "2026",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Three.js",
+      "Web3 Tokenomics",
+      "Tailwind CSS",
+      "Node.js",
+    ],
+    services: [
+      "Web Development",
+      "UI/UX & Graphic Artistry",
+      "Web3 Integration",
+      "AI Travel Experience Engine",
+    ],
+    image: "/Projects/letmetrip.jpg",
+    videoPoster: "/Projects/letmetrip.jpg",
+    projectUrl: "https://letmetrip.store/",
+    challenge:
+      "Traditional travel platforms lacked engaging aesthetic design, community token incentives, and unified Web3 documentation for adventurous digital nomads.",
+    solution:
+      "We engineered a high-impact Web3 travel and lifestyle store featuring fluid graphic artwork, LMT tokenomics architecture, transparent roadmap telemetry, and instant trip onboarding.",
+    keyFeatures: [
+      "Immersive artistic dark-mode visual experience & fluid UI animation",
+      "Decentralized LMT token rewards & community ecosystem integration",
+      "Interactive milestone roadmap & comprehensive technical docs",
+      "AI-driven adventure & trip discovery onboarding engine",
+    ],
+    results: [
+      "Over 15,000+ early community explorers onboarded across global channels",
+      "Sub-second page load times with WebGL-accelerated graphic rendering",
+      "Seamless tokenomics & roadmap telemetry for Web3 travel enthusiasts",
+    ],
+  },
+  {
+    id: "22",
+    slug: "agent-zigma-prediction-oracle",
+    title: "Zigma",
+    category: "AI",
+    industry: "AI Prediction Market Oracle & Autonomous Trading Intelligence",
+    shortDesc:
+      "Autonomous AI prediction market oracle and trading intelligence platform detecting structural edge across Polymarket orderbooks with real-time signal telemetry.",
+    fullDesc:
+      "Agent Zigma (www.zigma.pro) is an advanced autonomous AI prediction market oracle engineered for serious traders and institutional market participants. By hydrating Polymarket orderbooks, parsing real-time news flows, and executing 10 modular AI trading skills, Zigma provides transparent BUY/SELL/HOLD signals backed by probabilistic reasoning and automated position management.",
+    client: "Zigma Intelligence Corp.",
+    year: "2026",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Python",
+      "LLM Oracle Engine",
+      "WebSockets",
+      "Polymarket APIs",
+      "Tailwind CSS",
+    ],
+    services: [
+      "AI & Machine Learning",
+      "FinTech & Prediction Oracle",
+      "Web Development",
+      "Real-Time Trading Intelligence",
+    ],
+    image: "/Projects/zigma.jpg",
+    videoPoster: "/Projects/zigma.jpg",
+    projectUrl: "https://www.zigma.pro/",
+    challenge:
+      "Prediction market participants faced noise, sentiment bias, and slow orderbook analysis when evaluating probability odds during fast-moving events.",
+    solution:
+      "We engineered an autonomous AI oracle platform with live interrogation capabilities, automated Polymarket orderbook hydration, and 10 modular trading skills.",
+    keyFeatures: [
+      "Live Interrogation Oracle: Instant BUY/SELL/HOLD reasoning for any Polymarket link",
+      "10 Modular AI Trading Skills across Free, Basic, and Pro tiers",
+      "Real-Time Signal Feeds & Structural Edge Detection Engine",
+      "Futuristic Cyber-Terminal Dark UI with neon green telemetry",
+    ],
+    results: [
+      "Sub-500ms orderbook hydration & signal generation across live prediction markets",
+      "Over 100,000+ Polymarket contract probability queries processed smoothly",
+      "Recognized as a leading AI prediction market oracle platform in 2026",
+    ],
+  },
+  {
+    id: "23",
+    slug: "unik-naturals-skincare-ecommerce",
+    title: "Unik Naturals",
+    category: "Web",
+    industry: "E-Commerce & Advanced Organic Skincare",
+    shortDesc:
+      "Premier Indian clean beauty and science-backed skincare e-commerce platform offering 3-step routine bundles, sunscreens, and dermatologically tested actives.",
+    fullDesc:
+      "Unik Naturals (www.uniknaturals.com) is a high-growth Indian direct-to-consumer (D2C) skincare and clean beauty e-commerce platform. Engineered with high-conversion Shopify storefront architecture, dynamic 3-step routine bundle builders (Cleanse, Treat, Protect), coupon marquee integrations (UNIK10), dermatologically verified active telemetry, and sub-second checkout.",
+    client: "Unik Naturals Organics",
+    year: "2026",
+    technologies: [
+      "Shopify Plus",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Razorpay",
+      "WhatsApp Business API",
+    ],
+    services: [
+      "E-Commerce Development",
+      "UI/UX Design",
+      "D2C Brand Architecture",
+      "Conversion Rate Optimization",
+    ],
+    image: "/Projects/uniknaturals.jpg",
+    videoPoster: "/Projects/uniknaturals.jpg",
+    projectUrl: "https://uniknaturals.com/",
+    challenge:
+      "Modern D2C skincare shoppers faced difficulty navigating multi-product skincare routines and verifying dermatological active ingredients on mobile checkouts.",
+    solution:
+      "We engineered a pastel, mobile-first e-commerce store with interactive 3-step skincare routine bundle selectors, 1-click discount promo banners, and WhatsApp customer support.",
+    keyFeatures: [
+      "Ultimate 3-Step Routine Bundle Builder (Cleanse, Treat, Protect at ₹999)",
+      "Science-backed dermatologically tested, paraben-free & cruelty-free product catalog",
+      "Dynamic promo discount marquee & GoKwik 1-click checkout",
+      "Pastel pink & botanical mint green responsive brand aesthetics",
+    ],
+    results: [
+      "Over 25,000+ skincare bundles and sunscreens delivered across India",
+      "38% increase in average order value (AOV) via 3-step routine bundle builder",
+      "4.9★ customer review rating across dermatologically tested skincare products",
+    ],
+  },
+  {
+    id: "24",
+    slug: "desh-ghumo-travel-booking",
+    title: "Desh Ghumo",
+    category: "Web",
+    industry: "Travel & Tourism Platform",
+    shortDesc:
+      "Custom travel booking platform offering curated domestic & international holiday packages, itinerary planning, and seamless trip booking.",
+    fullDesc:
+      "Desh Ghumo (www.deshghumo.com) is a modern travel booking ecosystem designed for seamless exploration of domestic and international holiday destinations. Featuring instant package searches, personalized itinerary builders, LGBTQ+ friendly tours, and secure online bookings.",
+    client: "Desh Ghumo Travels",
+    year: "2026",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Tailwind CSS",
+    ],
+    services: [
+      "Web Development",
+      "UI/UX Design",
+      "Travel Booking Engine",
+      "Cloud Infrastructure",
+    ],
+    image: "/Projects/deshghumo.png?v=2",
+    videoPoster: "/Projects/deshghumo.png?v=2",
+    projectUrl: "https://www.deshghumo.com/",
+    challenge:
+      "Travelers faced fragmented booking options, opaque package pricing, and complex trip customization processes across various international and domestic destinations.",
+    solution:
+      "We engineered an intuitive, high-performance travel web platform featuring handpicked destination packages, instant search filters, LGBTQ+ friendly tours, and transparent booking inquiries.",
+    keyFeatures: [
+      "Handpicked domestic and international holiday packages",
+      "Specialized categories: Holidays, Domestic, LGBTQ+ Tours, International",
+      "Instant destination search and package inquiry pipeline",
+      "Responsive modern UI with curated travel itineraries",
+    ],
+    results: [
+      "Over 10,000+ travelers exploring curated holiday packages",
+      "Sub-second page load times with responsive mobile & desktop UX",
+      "4.9★ rating for travel booking experience and customer support",
     ],
   },
 ];

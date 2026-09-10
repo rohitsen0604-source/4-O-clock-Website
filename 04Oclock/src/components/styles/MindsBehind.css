@@ -41,6 +41,11 @@
   letter-spacing: -1px;
 }
 
+.gold-highlight {
+  color: var(--accentColor, #E5C158);
+  text-shadow: 0 0 16px rgba(229, 193, 88, 0.4);
+}
+
 .minds-quote-author {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.5);
@@ -80,7 +85,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 20px 24px;
+  gap: 40px 28px;
   max-width: 1080px;
   margin: 0 auto;
   padding: 10px 0 30px;
@@ -112,19 +117,19 @@
 
 /* Staggered Vertical Offsets for Organic Cloud Effect */
 .minds-bubble.offset-up {
-  transform: translateY(-14px);
+  transform: translateY(-8px);
 }
 
 .minds-bubble.offset-down {
-  transform: translateY(14px);
+  transform: translateY(8px);
 }
 
 .minds-bubble.offset-up:hover {
-  transform: scale(1.14) translateY(-20px);
+  transform: scale(1.14) translateY(-14px);
 }
 
 .minds-bubble.offset-down:hover {
-  transform: scale(1.14) translateY(8px);
+  transform: scale(1.14) translateY(2px);
 }
 
 /* Bubble Sizes */
@@ -166,7 +171,7 @@
   box-shadow: 0 8px 24px rgba(255, 255, 255, 0.12);
 }
 
-/* Member Photo — Full Natural Color with Face Top-Centered */
+/* Member Photo — Default: Cover and Fill Circle with Face Top-Centered */
 .minds-bubble-img {
   position: absolute;
   top: 0;
@@ -179,9 +184,23 @@
   transition: all 0.35s ease;
 }
 
+/* Special class for Rohit Sen to remain zoomed out & contain full photo */
+.minds-bubble-img.fit-contain {
+  object-fit: contain;
+  object-position: center;
+  padding: 6px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
 .minds-bubble:hover .minds-bubble-img {
   filter: none;
   transform: scale(1.08);
+}
+
+.minds-bubble:hover .minds-bubble-img.fit-contain {
+  transform: scale(1.05);
 }
 
 .minds-bubble-tint {
@@ -190,12 +209,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.85) 100%);
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.88) 100%);
   transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .minds-bubble:hover .minds-bubble-tint {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.92) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.94) 100%);
 }
 
 /* Bubble Text Content Overlay — Centered & Properly Fitted in Circle Curve */
@@ -204,7 +225,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 6px 8px 12px 8px;
+  padding: 4px 6px 10px 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -213,6 +234,7 @@
   box-sizing: border-box;
   opacity: 1;
   text-align: center;
+  pointer-events: none;
 }
 
 .minds-bubble:hover .minds-bubble-overlay-content {
@@ -224,25 +246,25 @@
   font-weight: 800;
   color: #ffffff;
   line-height: 1.15;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.95);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.98), 0 0 4px rgba(0, 0, 0, 0.9);
   margin: 0;
   text-align: center;
 }
 
 .minds-bubble.huge .minds-bubble-name,
 .minds-bubble.large .minds-bubble-name {
-  font-size: 13.5px;
+  font-size: 13px;
 }
 
 .minds-bubble-role {
   font-size: 9px;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.95);
   margin-top: 2px;
   font-weight: 600;
   line-height: 1.15;
   text-align: center;
   max-width: 95%;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.95);
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.98);
   word-break: break-word;
 }
 
@@ -356,6 +378,14 @@
   border: 3px solid #ffffff;
   box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
   flex-shrink: 0;
+}
+
+.minds-modal-avatar.fit-contain {
+  object-fit: contain;
+  object-position: center;
+  padding: 4px;
+  background: #ffffff;
+  box-sizing: border-box;
 }
 
 .minds-modal-name {

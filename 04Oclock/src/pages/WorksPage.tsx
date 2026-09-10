@@ -95,6 +95,7 @@ export const WorksPage: React.FC = () => {
         </div>
       </section>
 
+
       {/* Video Modal Component */}
       <VideoModal
         isOpen={activeVideoModal.isOpen}
@@ -107,6 +108,9 @@ export const WorksPage: React.FC = () => {
       {/* CTA */}
       <div style={{ maxWidth: "var(--cMaxWidth)", width: "var(--cWidth)", margin: "0 auto" }}>
         <div className="cta-banner">
+          <span className="section-tag" style={{ marginBottom: "10px", display: "inline-block" }}>
+            LET'S BUILD TOGETHER
+          </span>
           <h3>Want to See a Similar Product Built for Your Brand?</h3>
           <p>
             Share your project concept with us. We'll analyze technical feasibility and provide a detailed blueprint.
