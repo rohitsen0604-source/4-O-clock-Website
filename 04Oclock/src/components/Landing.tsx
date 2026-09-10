@@ -61,9 +61,10 @@ const Landing = ({ children }: PropsWithChildren) => {
           <h1 className="hero-split-title hero-title-left">
             <span>IDEAS HAVE A</span>
           </h1>
-          <h1 className="hero-split-title hero-title-right">
+
+          <div className="hero-split-title hero-title-right">
             TIME.
-          </h1>
+          </div>
         </div>
 
         {/* Center Main Statement Block */}
@@ -112,4 +113,3 @@ const Landing = ({ children }: PropsWithChildren) => {
 };
 
 export default Landing;
-
