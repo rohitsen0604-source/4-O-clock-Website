@@ -194,16 +194,7 @@ export const MindsBehind: React.FC = () => {
               <div className="minds-modal-bio-title">Developer Overview</div>
               <p className="minds-modal-bio">{selectedMember.bio}</p>
 
-              <div className="minds-modal-bio-title" style={{ marginBottom: "10px" }}>
-                Core Technologies & Expertise
-              </div>
-              <div className="minds-modal-skills">
-                {selectedMember.skills.map((skill) => (
-                  <span key={skill} className="minds-skill-pill">
-                    {skill}
-                  </span>
-                ))}
-              </div>
+
 
               {selectedMember.socials && Object.values(selectedMember.socials).some(Boolean) && (
                 <div className="minds-modal-socials">
