@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { FaEnvelope, FaMapMarkerAlt, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import { CONTACT_CONFIG } from "../data/contact";
+import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import "./styles/GlassContact.css";
 
 interface GlassContactProps {
@@ -94,36 +93,7 @@ export const GlassContact: React.FC<GlassContactProps> = () => {
             </div>
           </div>
 
-          {/* Social Icons Row */}
-          <div className="glass-social-row">
-            <a
-              href={CONTACT_CONFIG.socials.find((s) => s.name === "Twitter")?.url || "https://x.com"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-social-icon-btn"
-              title="Twitter"
-            >
-              <FaTwitter />
-            </a>
-            <a
-              href={CONTACT_CONFIG.socials.find((s) => s.name === "Instagram")?.url || "https://instagram.com"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-social-icon-btn"
-              title="Instagram"
-            >
-              <FaInstagram />
-            </a>
-            <a
-              href={CONTACT_CONFIG.socials.find((s) => s.name === "LinkedIn")?.url || "https://linkedin.com"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-social-icon-btn"
-              title="LinkedIn"
-            >
-              <FaLinkedinIn />
-            </a>
-          </div>
+
         </div>
 
         {/* Right Form Panel */}
