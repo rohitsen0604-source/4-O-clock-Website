@@ -171,101 +171,69 @@
   box-shadow: 0 8px 24px rgba(255, 255, 255, 0.12);
 }
 
-/* Member Photo — Default: Cover and Fill Circle with Face Top-Centered */
-.minds-bubble-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  filter: none;
-  transition: all 0.35s ease;
+/* Thought Bubble Styling (Pure White, Crisp Typography, High Impact Quotes) */
+.minds-bubble.minds-thought-bubble {
+  background: #ffffff !important;
+  border: 1.5px solid #ffffff !important;
+  color: #000000 !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.8), 0 0 18px rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
-/* Special class for Rohit Sen to remain zoomed out & contain full photo */
-.minds-bubble-img.fit-contain {
-  object-fit: contain;
-  object-position: center;
-  padding: 6px;
-  box-sizing: border-box;
-  border-radius: 50%;
-  background: #ffffff;
+.minds-bubble.minds-thought-bubble:hover {
+  border-color: #E5C158 !important;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.95), 0 0 30px rgba(229, 193, 88, 0.45);
 }
 
-.minds-bubble:hover .minds-bubble-img {
-  filter: none;
-  transform: scale(1.08);
-}
-
-.minds-bubble:hover .minds-bubble-img.fit-contain {
-  transform: scale(1.05);
-}
-
-.minds-bubble-tint {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.88) 100%);
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-.minds-bubble:hover .minds-bubble-tint {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.94) 100%);
-}
-
-/* Bubble Text Content Overlay — Centered & Properly Fitted in Circle Curve */
-.minds-bubble-overlay-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 4px 6px 10px 6px;
+.minds-thought-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  z-index: 4;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 14px 12px;
   box-sizing: border-box;
-  opacity: 1;
-  text-align: center;
-  pointer-events: none;
 }
 
-.minds-bubble:hover .minds-bubble-overlay-content {
-  opacity: 1;
-}
-
-.minds-bubble-name {
-  font-size: 12px;
-  font-weight: 800;
-  color: #ffffff;
-  line-height: 1.15;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.98), 0 0 4px rgba(0, 0, 0, 0.9);
-  margin: 0;
-  text-align: center;
-}
-
-.minds-bubble.huge .minds-bubble-name,
-.minds-bubble.large .minds-bubble-name {
-  font-size: 13px;
-}
-
-.minds-bubble-role {
+.minds-thought-badge {
   font-size: 9px;
-  color: rgba(255, 255, 255, 0.95);
-  margin-top: 2px;
-  font-weight: 600;
-  line-height: 1.15;
-  text-align: center;
+  font-weight: 900;
+  color: #9c7308;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  margin-bottom: 6px;
+  line-height: 1;
+  display: inline-block;
+}
+
+.minds-thought-text {
+  font-size: 11.5px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #000000;
+  margin: 0;
+  letter-spacing: -0.2px;
   max-width: 95%;
-  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.98);
   word-break: break-word;
+}
+
+.minds-thought-focus {
+  font-size: 8.5px;
+  font-weight: 800;
+  color: #4b4b4b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 6px;
+  line-height: 1;
+  display: inline-block;
 }
 
 /* Stat & Role Non-Image Content Typography */
@@ -365,50 +333,53 @@
 .minds-modal-header {
   display: flex;
   align-items: center;
-  gap: 18px;
-  margin-bottom: 20px;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
-.minds-modal-avatar {
-  width: 84px;
-  height: 84px;
+.minds-modal-icon-badge {
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  object-fit: cover;
-  object-position: top center;
-  border: 3px solid #ffffff;
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
-  flex-shrink: 0;
-}
-
-.minds-modal-avatar.fit-contain {
-  object-fit: contain;
-  object-position: center;
-  padding: 4px;
-  background: #ffffff;
-  box-sizing: border-box;
-}
-
-.minds-modal-name {
+  background: rgba(229, 193, 88, 0.15);
+  border: 1.5px solid rgba(229, 193, 88, 0.4);
+  color: #E5C158;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 22px;
+  flex-shrink: 0;
+  box-shadow: 0 0 20px rgba(229, 193, 88, 0.2);
+}
+
+.minds-modal-tag {
+  font-size: 11px;
   font-weight: 800;
-  margin: 0 0 4px 0;
+  color: #E5C158;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+}
+
+.minds-modal-focus {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 2px;
+  display: block;
+}
+
+.minds-modal-thought-quote {
+  font-size: clamp(20px, 2.6vw, 26px);
+  font-weight: 900;
+  line-height: 1.25;
   color: #ffffff;
-}
-
-.minds-modal-role {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.minds-modal-tagline {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
-  margin-top: 4px;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.5px;
 }
 
 .minds-modal-body {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 18px;
 }
 
@@ -422,7 +393,7 @@
 }
 
 .minds-modal-bio {
-  font-size: 14px;
+  font-size: 14.5px;
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
   margin-bottom: 20px;
@@ -432,43 +403,44 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .minds-skill-pill {
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 600;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #ffffff;
 }
 
-.minds-modal-socials {
-  display: flex;
-  gap: 12px;
+.minds-modal-takeaway-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(229, 193, 88, 0.3);
+  border-left: 3px solid #E5C158;
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-top: 10px;
 }
 
-.minds-social-link {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+.minds-takeaway-lbl {
+  font-size: 10px;
+  font-weight: 900;
+  color: #E5C158;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.minds-takeaway-text {
+  font-size: 13.5px;
+  font-weight: 600;
   color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-size: 15px;
-  transition: all 0.2s;
-}
-
-.minds-social-link:hover {
-  background: #ffffff;
-  color: #000000;
-  transform: translateY(-2px);
+  margin: 0;
+  line-height: 1.45;
 }
 
 /* Responsive Scaling (< 768px) */
@@ -526,5 +498,24 @@
   .minds-bubble.offset-up,
   .minds-bubble.offset-down {
     transform: none !important;
+  }
+
+  .minds-thought-inner {
+    padding: 8px 6px;
+  }
+
+  .minds-thought-badge {
+    font-size: 7.5px;
+    margin-bottom: 3px;
+  }
+
+  .minds-thought-text {
+    font-size: 9.5px;
+    line-height: 1.2;
+  }
+
+  .minds-thought-focus {
+    font-size: 7.5px;
+    margin-top: 3px;
   }
 }

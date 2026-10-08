@@ -38,8 +38,6 @@ const Footer = () => {
               <ul className="footer-links-list">
                 <li className="footer-link-item"><Link to="/about">About Us</Link></li>
                 <li className="footer-link-item"><Link to="/services">Services</Link></li>
-                <li className="footer-link-item"><Link to="/about#journey">Our Journey</Link></li>
-                <li className="footer-link-item"><Link to="/about#mission">Mission & Vision</Link></li>
                 <li className="footer-link-item"><Link to="/works">Our Works</Link></li>
                 <li className="footer-link-item"><Link to="/contact">Contact Us</Link></li>
               </ul>

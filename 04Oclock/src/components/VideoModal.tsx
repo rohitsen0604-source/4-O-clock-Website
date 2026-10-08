@@ -112,7 +112,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
               }}
             >
               <img
-                src={posterImage || "/images/banner.png"}
+                src={posterImage || "/images/04.png"}
                 alt={title}
                 style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.6 }}
               />

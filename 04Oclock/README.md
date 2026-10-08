@@ -2,7 +2,7 @@
 
 A modern, interactive portfolio website featuring 3D graphics and smooth animations built with React, Three.js, and GSAP.
 
-![Protfolio-Preview](./public/images/banner.png)
+![Protfolio-Preview](./public/images/04.png)
 
 ## Overview
 
