@@ -4,9 +4,12 @@ import { Link } from "../router";
 import { PROJECTS_DATA } from "../data/projects";
 import { ProjectCoverflow } from "../components/ProjectCoverflow";
 import { VideoModal } from "../components/VideoModal";
+import { BrandPhilosophy } from "../components/BrandPhilosophy";
 import { MdArrowOutward } from "react-icons/md";
 import "../components/styles/Pages.css";
 
+/*
+// Client Logos data (Temporarily commented out with the Client Trust section)
 const CLIENT_LOGOS = [
   "/Logos/100__1_-removebg-preview 1.png",
   "/Logos/2caf55be-47ac-4373-8088-927b3b572f0c_clean.png",
@@ -33,6 +36,7 @@ const CLIENT_LOGOS = [
   "/Logos/WhatsApp Image 2026-02-14 at 7.38.27 PM 2_transparent.png",
   "/Logos/White-Logo-PNG-horizontal.webp",
 ];
+*/
 
 export const WorksPage: React.FC = () => {
   const [activeVideoModal, setActiveVideoModal] = useState<{
@@ -70,7 +74,7 @@ export const WorksPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Client Trust Section - Infinite Single-Line Logo Marquee Loop */}
+      {/* Client Trust Section - Infinite Single-Line Logo Marquee Loop (Temporarily Commented Out)
       <section className="section-container" style={{ padding: "60px 0", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)", margin: "40px 0" }}>
         <div style={{ maxWidth: "100%", width: "100%", textAlign: "center" }}>
           <span className="section-tag">Client Trust & Global Reach</span>
@@ -78,7 +82,7 @@ export const WorksPage: React.FC = () => {
             Trusted By Businesses Moving Forward
           </h3>
 
-          {/* Single Line Infinite Logo Marquee Slider */}
+          Single Line Infinite Logo Marquee Slider
           <div className="client-marquee-container">
             <div className="client-marquee-track">
               {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((logoUrl, idx) => (
@@ -94,7 +98,11 @@ export const WorksPage: React.FC = () => {
           </div>
         </div>
       </section>
+      */}
 
+
+      {/* Brand Identity & Philosophy Section: 4 O'Clock, Owl & White Lion */}
+      <BrandPhilosophy />
 
       {/* Video Modal Component */}
       <VideoModal
