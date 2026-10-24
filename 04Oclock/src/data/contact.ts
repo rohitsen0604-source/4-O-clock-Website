@@ -1,5 +1,5 @@
 export const CONTACT_CONFIG = {
-  email: "contact@4oclocktech.com",
+  email: "4oclocktechnologies.info@gmail.com",
   headOffice: "1 Barrett, Kensington, Victoria, Australia",
   indiaOffice: "Scheme No 114, Dewas Road, Indore, Madhya Pradesh, India",
   location: "Kensington, Australia & Indore, India",

@@ -57,7 +57,7 @@ export const SEO: React.FC<SEOProps> = ({ title, description, canonical }) => {
         "@type": "ContactPoint",
         telephone: "+1-555-040-2026",
         contactType: "customer service",
-        email: "contact@04oclock.tech",
+        email: "4oclocktechnologies.info@gmail.com",
       },
     };
     

@@ -60,8 +60,8 @@ export const GlassContact: React.FC<GlassContactProps> = () => {
                 <FaEnvelope />
               </div>
               <div className="glass-info-text">
-                <a href="mailto:contact@4oclocktech.com">
-                  contact@4oclocktech.com
+                <a href="mailto:4oclocktechnologies.info@gmail.com">
+                  4oclocktechnologies.info@gmail.com
                 </a>
               </div>
             </div>
