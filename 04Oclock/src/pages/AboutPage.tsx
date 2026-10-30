@@ -2,7 +2,6 @@ import React from "react";
 import { SEO } from "../components/SEO";
 import { Link } from "../router";
 import { ValuesInfographic } from "../components/ValuesInfographic";
-import { WorkProcessDiagram } from "../components/WorkProcessDiagram";
 import { WhyChooseUsDiagram } from "../components/WhyChooseUsDiagram";
 import { MindsBehind } from "../components/MindsBehind";
 import {
@@ -235,8 +234,6 @@ export const AboutPage: React.FC = () => {
       {/* Core Values Infographic */}
       <ValuesInfographic />
 
-      {/* How We Work Process Diagram */}
-      <WorkProcessDiagram />
 
       {/* Why Choose Us Infographic Section (3D Question Mark Layout) */}
       <WhyChooseUsDiagram />
